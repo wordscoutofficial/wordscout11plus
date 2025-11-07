@@ -1,0 +1,240 @@
+<!-- trigger GitHub Pages -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>WordScout11Plus</title>
+
+  <!-- Fonts: Kid-friendly Baloo font -->
+  <link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@400;700&display=swap" rel="stylesheet">
+
+  <style>
+    :root {
+      --yellow: #fcec61;
+      --blue: #00b5ca;
+      --cream: #fef9dc;
+      --light-blue: #e6fbff;
+      --pale-yellow: #fffde7;
+      --dark: #343434;
+
+      --fs-h1: 2.5rem;
+      --fs-h2: 1.75rem;
+      --fs-h3: 1.5rem;
+      --fs-body: 1rem;
+
+      --container: 1100px;
+      --radius: 14px;
+    }
+
+    * { box-sizing: border-box; }
+    html, body { height: 100%; margin:0; }
+
+    body {
+      font-family: 'Baloo 2', cursive;
+      background: linear-gradient(180deg, var(--cream) 0%, #fffaf0 100%);
+      color: var(--dark);
+      line-height: 1.5;
+      scroll-behavior: smooth;
+      font-size: var(--fs-body);
+    }
+
+    .section {
+      max-width: var(--container);
+      margin: 2.5rem auto;
+      padding: 2.25rem;
+      border-radius: var(--radius);
+      box-shadow: 0 6px 30px rgba(52,52,52,0.06);
+      background: white;
+    }
+
+    header {
+      position: sticky; top: 0; z-index: 40;
+      background: var(--cream);
+      display: flex; align-items: center; justify-content: space-between;
+      gap: 1rem;
+      padding: .9rem 1.5rem;
+    }
+
+    header .brand {
+      display:flex; align-items:center; gap:.9rem;
+    }
+    header h1 {
+      margin: 0;
+      font-family: 'Baloo 2', cursive;
+      font-weight: 700;
+      font-size: 1.5rem;
+      color: var(--dark);
+    }
+    header .tagline { font-size: .9rem; color: var(--blue); font-weight: 600; }
+
+    nav { display:flex; align-items:center; gap: .75rem; }
+    nav a {
+      text-decoration: none;
+      color: var(--dark);
+      padding: .45rem .6rem;
+      border-radius: 10px;
+      font-weight: 600;
+      transition: all .18s ease;
+      font-size: .95rem;
+    }
+    nav a:hover {
+      color: white;
+      background: linear-gradient(90deg, var(--blue), #00d4ff);
+      transform: translateY(-2px);
+      box-shadow: 0 6px 18px rgba(0,181,202,0.15);
+    }
+
+    .hero {
+      border-radius: 16px;
+      max-width: var(--container);
+      margin: 2.5rem auto;
+      padding: 3.5rem 2.5rem;
+      color: white;
+      background: linear-gradient(135deg, #00b5ca 0%, #00d4ff 100%);
+      box-shadow: 0 12px 40px rgba(0,181,202,0.18);
+      display: grid;
+      grid-template-columns: 1fr auto;
+      gap: 1.25rem;
+      align-items: center;
+    }
+    .hero h2 {
+      margin: 0 0 .5rem 0;
+      font-family: 'Baloo 2', cursive;
+      font-size: var(--fs-h1);
+      letter-spacing: -0.5px;
+      line-height: 1.05;
+    }
+    .hero p { margin: 0; opacity: .95; font-weight: 500; }
+
+    .hero .cta { display:flex; flex-direction:column; gap:.6rem; align-items:end; }
+    .btn {
+      display: inline-block;
+      margin: .25rem 0;
+      padding: .75rem 1.2rem;
+      background: white;
+      color: var(--blue);
+      font-weight: 700;
+      border-radius: 12px;
+      text-decoration: none;
+      box-shadow: 0 8px 24px rgba(0,0,0,0.08);
+      transition: transform .15s ease, box-shadow .15s ease;
+      font-size: .95rem;
+    }
+    .btn.secondary {
+      background: rgba(255,255,255,0.12);
+      color: white;
+      border: 1px solid rgba(255,255,255,0.12);
+      font-weight: 600;
+    }
+    .btn:hover { transform: translateY(-4px); box-shadow: 0 18px 40px rgba(0,0,0,0.12); }
+
+    .section h3 {
+      font-family: 'Baloo 2', cursive;
+      font-weight: 700;
+      font-size: var(--fs-h3);
+      margin-top: 0;
+      margin-bottom: 1rem;
+      color: var(--blue);
+    }
+
+    #about { background: linear-gradient(180deg, var(--pale-yellow), #fffef8); }
+    #books { background: linear-gradient(180deg, var(--light-blue), #f6feff); text-align: center; }
+    #reviews { background: linear-gradient(180deg, var(--yellow), #fff9d6); color: var(--blue); }
+    #sessions { background: linear-gradient(180deg, #fffdf6, #fffaf0); }
+    #contact { background: linear-gradient(180deg, #f0fdff, #f6ffff); }
+
+    p { font-size: 1rem; color: rgba(52,52,52,0.95); }
+    strong { font-weight: 700; }
+    em { font-style: italic; }
+
+    .books-row { display:flex; gap:1rem; align-items:stretch; justify-content:center; flex-wrap:wrap; }
+    .book-card { width: 260px; padding:1.25rem; border-radius: 12px; background: white; box-shadow: 0 8px 24px rgba(17,24,39,0.04); text-align:left; display:flex; flex-direction:column; gap:.75rem; align-items:flex-start; }
+    .book-card h4 { margin:0; font-size:1.05rem; font-weight:700; font-family: 'Baloo 2', cursive; }
+    .book-card a { margin-top:auto; }
+
+    footer { text-align:center; padding:2rem; background: transparent; color: rgba(52,52,52,0.75); font-size: .95rem; margin-top:1.5rem; }
+
+    @media (max-width: 880px) {
+      .hero { grid-template-columns: 1fr; text-align: left; align-items: start; }
+      header { padding: .8rem 1rem; }
+      .section { margin: 1.25rem; padding: 1.25rem; }
+    }
+    @media (max-width: 480px) {
+      :root { --fs-h1: 1.5rem; --fs-h2: 1.25rem; }
+      header h1 { font-size: 1.25rem; }
+      nav { display:none; }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="brand">
+      <h1>WordScout11Plus</h1>
+    </div>
+    <nav>
+      <a href="#about">About</a>
+      <a href="#books">Books</a>
+      <a href="#reviews">Reviews</a>
+      <a href="#sessions">11+ Sessions</a>
+      <a href="#contact">Contact</a>
+    </nav>
+  </header>
+
+  <section class="hero">
+    <div>
+      <h2>Master 11+ Vocabulary &amp; Spelling</h2>
+      <p>Fun, colourful, and expertly designed books to help children thrive in their 11+ journey.</p>
+    </div>
+    <div class="cta">
+      <a class="btn" href="#books">See the Books</a>
+      <a class="btn secondary" href="#contact">Contact Us</a>
+    </div>
+  </section>
+
+  <section class="section" id="about">
+    <h3>About</h3>
+    <p><strong>WordScout11Plus</strong> and <strong>SpellScout11Plus</strong> are fun, vibrant learning companions designed to <strong>boost your child’s confidence</strong> and performance in the 11+ exams. With colourful visuals, interactive quizzes, and thoughtfully chosen vocabulary, our books turn practice into play — helping children absorb, remember, and <strong>enjoy learning new words every day.</strong></p>
+  </section>
+
+  <section class="section" id="books">
+    <h3>Books</h3>
+    <div class="books-row" role="list">
+      <div class="book-card" role="listitem">
+        <h4>WordScout</h4>
+        <p>Compact, bright, and made for daily practice — carefully chosen words, definitions and example sentences.</p>
+        <a class="btn" href="https://www.amazon.co.uk/dp/B0DJ2WSP35" target="_blank">Buy WordScout</a>
+      </div>
+
+      <div class="book-card" role="listitem">
+        <h4>SpellScout</h4>
+        <p>A handy notebook companion to practise spelling, record tricky words and revisit progress.</p>
+        <a class="btn" href="https://www.amazon.co.uk/SpellScout-Notebook-Exam-Preparation-Words-Even/dp/B0FDVJ6FHZ" target="_blank">Buy SpellScout</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="reviews">
+    <h3>Reviews</h3>
+    <p><em>"If your child is preparing for the 11+, a strong and rich vocabulary is essential..."</em> – Silviu</p>
+    <p><em>"Great little book for children to record their new words..."</em> – Ellie</p>
+    <p><em>"An easy tool to record and learn new words..."</em> – Andrea</p>
+  </section>
+
+  <section class="section" id="sessions">
+    <h3>11+ Sessions – September 2025</h3>
+    <p>We are running <strong>special 11+ preparation sessions</strong> in September 2025. Join our WhatsApp group for details and updates:</p>
+    <p><a class="btn" href="https://chat.whatsapp.com/LXyHkp6e761ChwcSU8YhWP?mode=ems_copy_t" target="_blank">Join WhatsApp Group</a></p>
+  </section>
+
+  <section class="section" id="contact">
+    <h3>Contact</h3>
+    <p>For enquiries, partnerships or feedback, email us:</p>
+    <p><a href="mailto:wordscout11plus@gmail.com">wordscout11plus@gmail.com</a></p>
+  </section>
+
+  <footer>
+    <p>&copy; 2025 WordScout11Plus. All rights reserved.</p>
+  </footer>
+</body>
+</html>
