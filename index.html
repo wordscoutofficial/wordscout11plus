@@ -3,14 +3,14 @@
 <html lang="en">
 <head>
   <!-- Google tag (gtag.js) -->
-  <script async src="https://www.googletagmanager.com/gtag/js?id=G-BJ8FQH5HQM"></script>
-  <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    gtag('js', new Date());
-    gtag('config', 'G-BJ8FQH5HQM');
-  </script>
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-BJ8FQH5HQM"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
 
+  gtag('config', 'G-BJ8FQH5HQM');
+</script>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>WordScout11Plus</title>
@@ -65,7 +65,9 @@
       padding: .9rem 1.5rem;
     }
 
-    header .brand { display:flex; align-items:center; gap:.9rem; }
+    header .brand {
+      display:flex; align-items:center; gap:.9rem;
+    }
     header h1 {
       margin: 0;
       font-family: 'Baloo 2', cursive;
@@ -73,6 +75,8 @@
       font-size: 1.5rem;
       color: var(--dark);
     }
+    header .tagline { font-size: .9rem; color: var(--blue); font-weight: 600; }
+
     nav { display:flex; align-items:center; gap: .75rem; }
     nav a {
       text-decoration: none;
@@ -103,8 +107,16 @@
       gap: 1.25rem;
       align-items: center;
     }
-    .hero h2 { margin: 0 0 .5rem 0; font-family: 'Baloo 2', cursive; font-size: var(--fs-h1); letter-spacing: -0.5px; line-height: 1.05; }
+    .hero h2 {
+      margin: 0 0 .5rem 0;
+      font-family: 'Baloo 2', cursive;
+      font-size: var(--fs-h1);
+      letter-spacing: -0.5px;
+      line-height: 1.05;
+    }
     .hero p { margin: 0; opacity: .95; font-weight: 500; }
+
+    .hero .cta { display:flex; flex-direction:column; gap:.6rem; align-items:end; }
     .btn {
       display: inline-block;
       margin: .25rem 0;
@@ -117,11 +129,23 @@
       box-shadow: 0 8px 24px rgba(0,0,0,0.08);
       transition: transform .15s ease, box-shadow .15s ease;
       font-size: .95rem;
-      cursor: pointer;
+    }
+    .btn.secondary {
+      background: rgba(255,255,255,0.12);
+      color: white;
+      border: 1px solid rgba(255,255,255,0.12);
+      font-weight: 600;
     }
     .btn:hover { transform: translateY(-4px); box-shadow: 0 18px 40px rgba(0,0,0,0.12); }
 
-    .section h3 { font-family: 'Baloo 2', cursive; font-weight: 700; font-size: var(--fs-h3); margin-top: 0; margin-bottom: 1rem; color: var(--blue); }
+    .section h3 {
+      font-family: 'Baloo 2', cursive;
+      font-weight: 700;
+      font-size: var(--fs-h3);
+      margin-top: 0;
+      margin-bottom: 1rem;
+      color: var(--blue);
+    }
 
     #about { background: linear-gradient(180deg, var(--pale-yellow), #fffef8); }
     #books { background: linear-gradient(180deg, var(--light-blue), #f6feff); text-align: center; }
@@ -129,45 +153,40 @@
     #sessions { background: linear-gradient(180deg, #fffdf6, #fffaf0); }
     #contact { background: linear-gradient(180deg, #f0fdff, #f6ffff); }
 
-    /* Quiz Styles */
-    #quiz-box { display: grid; gap: 1.5rem; text-align: center; }
-    .quiz-card {
-      background: linear-gradient(135deg, #00b5ca 0%, #00d4ff 100%);
-      color: white;
-      padding: 2rem;
-      border-radius: var(--radius);
-      box-shadow: 0 12px 40px rgba(0,181,202,0.18);
-      transition: transform 0.2s, box-shadow 0.2s;
-    }
-    .quiz-card button { width: 70%; margin: 0.5rem auto; display: block; }
-    .quiz-card button:hover { transform: scale(1.05); }
-    .quiz-card button.active { box-shadow: 0 0 0 4px #fcec61; background: #00d4ff; }
+    p { font-size: 1rem; color: rgba(52,52,52,0.95); }
+    strong { font-weight: 700; }
+    em { font-style: italic; }
 
-    #end-screen input {
-      padding: 0.5rem;
-      width: 60%;
-      border-radius: 8px;
-      border: none;
-      margin-bottom: 1rem;
-    }
+    .books-row { display:flex; gap:1rem; align-items:stretch; justify-content:center; flex-wrap:wrap; }
+    .book-card { width: 260px; padding:1.25rem; border-radius: 12px; background: white; box-shadow: 0 8px 24px rgba(17,24,39,0.04); text-align:left; display:flex; flex-direction:column; gap:.75rem; align-items:flex-start; }
+    .book-card h4 { margin:0; font-size:1.05rem; font-weight:700; font-family: 'Baloo 2', cursive; }
+    .book-card a { margin-top:auto; }
 
     footer { text-align:center; padding:2rem; background: transparent; color: rgba(52,52,52,0.75); font-size: .95rem; margin-top:1.5rem; }
 
-    @media (max-width: 880px) { .hero { grid-template-columns: 1fr; text-align: left; align-items: start; } }
-    @media (max-width: 480px) { header h1 { font-size: 1.25rem; } nav { display:none; } }
-
+    @media (max-width: 880px) {
+      .hero { grid-template-columns: 1fr; text-align: left; align-items: start; }
+      header { padding: .8rem 1rem; }
+      .section { margin: 1.25rem; padding: 1.25rem; }
+    }
+    @media (max-width: 480px) {
+      :root { --fs-h1: 1.5rem; --fs-h2: 1.25rem; }
+      header h1 { font-size: 1.25rem; }
+      nav { display:none; }
+    }
   </style>
 </head>
 <body>
   <header>
-    <div class="brand"><h1>WordScout11Plus</h1></div>
+    <div class="brand">
+      <h1>WordScout11Plus</h1>
+    </div>
     <nav>
       <a href="#about">About</a>
       <a href="#books">Books</a>
       <a href="#reviews">Reviews</a>
       <a href="#sessions">11+ Sessions</a>
       <a href="#contact">Contact</a>
-      <a href="#quiz">Quiz</a>
     </nav>
   </header>
 
@@ -182,87 +201,49 @@
     </div>
   </section>
 
-  <!-- Quiz Section -->
-  <section class="section" id="quiz">
-    <h3>WordScout Quiz</h3>
-    <p>Test your 11+ vocabulary!</p>
-    <div id="quiz-box">
-      <div id="question-box" class="quiz-card">
-        <p id="question-text">Loading question...</p>
-        <div id="options"></div>
-        <button id="next-btn" class="btn" style="display:none;">Next</button>
+  <section class="section" id="about">
+    <h3>About</h3>
+    <p><strong>WordScout11Plus</strong> and <strong>SpellScout11Plus</strong> are fun, vibrant learning companions designed to <strong>boost your child’s confidence</strong> and performance in the 11+ exams. With colourful visuals, interactive quizzes, and thoughtfully chosen vocabulary, our books turn practice into play — helping children absorb, remember, and <strong>enjoy learning new words every day.</strong></p>
+  </section>
+
+  <section class="section" id="books">
+    <h3>Books</h3>
+    <div class="books-row" role="list">
+      <div class="book-card" role="listitem">
+        <h4>WordScout</h4>
+        <p>Compact, bright, and made for daily practice — carefully chosen words, definitions and example sentences.</p>
+        <a class="btn" href="https://www.amazon.co.uk/dp/B0DJ2WSP35" target="_blank">Buy WordScout</a>
       </div>
-      <div id="end-screen" class="quiz-card" style="display:none;">
-        <h4>Your Score: <span id="score"></span></h4>
-        <input id="player-name" type="text" placeholder="Enter your name (optional)">
-        <button id="restart-btn" class="btn">Restart Quiz</button>
+
+      <div class="book-card" role="listitem">
+        <h4>SpellScout</h4>
+        <p>A handy notebook companion to practise spelling, record tricky words and revisit progress.</p>
+        <a class="btn" href="https://www.amazon.co.uk/SpellScout-Notebook-Exam-Preparation-Words-Even/dp/B0FDVJ6FHZ" target="_blank">Buy SpellScout</a>
       </div>
     </div>
+  </section>
+
+  <section class="section" id="reviews">
+    <h3>Reviews</h3>
+    <p><em>"If your child is preparing for the 11+, a strong and rich vocabulary is essential..."</em> – Silviu</p>
+    <p><em>"Great little book for children to record their new words..."</em> – Ellie</p>
+    <p><em>"An easy tool to record and learn new words..."</em> – Andrea</p>
+  </section>
+
+  <section class="section" id="sessions">
+    <h3>11+ Sessions – September 2025</h3>
+    <p>We are running <strong>special 11+ preparation sessions</strong> in September 2025. Join our WhatsApp group for details and updates:</p>
+    <p><a class="btn" href="https://chat.whatsapp.com/LXyHkp6e761ChwcSU8YhWP?mode=ems_copy_t" target="_blank">Join WhatsApp Group</a></p>
+  </section>
+
+  <section class="section" id="contact">
+    <h3>Contact</h3>
+    <p>For enquiries, partnerships or feedback, email us:</p>
+    <p><a href="mailto:wordscout11plus@gmail.com">wordscout11plus@gmail.com</a></p>
   </section>
 
   <footer>
     <p>&copy; 2025 WordScout11Plus. All rights reserved.</p>
   </footer>
-
-  <script>
-    const quizData = [
-      { q: "What does 'benevolent' mean?", options: ["Kind and generous", "Angry", "Loud", "Lazy"], correct: 0 },
-      { q: "Choose the correct spelling:", options: ["Definately", "Definitely", "Definetly", "Defenitely"], correct: 1 },
-      { q: "What is the opposite of 'expand'?", options: ["Increase", "Enlarge", "Shrink", "Grow"], correct: 2 },
-      { q: "Which word means 'brave'?", options: ["Timid", "Courageous", "Fearful", "Shy"], correct: 1 },
-    ];
-
-    let current = 0, score = 0;
-    const qText = document.getElementById('question-text');
-    const optionsDiv = document.getElementById('options');
-    const nextBtn = document.getElementById('next-btn');
-    const endScreen = document.getElementById('end-screen');
-    const scoreSpan = document.getElementById('score');
-
-    function loadQuestion() {
-      const q = quizData[current];
-      qText.textContent = q.q;
-      optionsDiv.innerHTML = "";
-      q.options.forEach((opt, i) => {
-        const btn = document.createElement('button');
-        btn.textContent = opt;
-        btn.className = "btn";
-        btn.onclick = () => checkAnswer(i, btn);
-        optionsDiv.appendChild(btn);
-      });
-    }
-
-    function checkAnswer(selected, btn) {
-      const q = quizData[current];
-      if (selected === q.correct) score++;
-      // highlight selected
-      [...optionsDiv.children].forEach(b => b.classList.remove('active'));
-      btn.classList.add('active');
-      nextBtn.style.display = 'inline-block';
-    }
-
-    nextBtn.onclick = () => {
-      current++;
-      if (current < quizData.length) {
-        nextBtn.style.display = 'none';
-        loadQuestion();
-      } else {
-        document.getElementById('question-box').style.display = 'none';
-        endScreen.style.display = 'block';
-        scoreSpan.textContent = score + " / " + quizData.length;
-      }
-    };
-
-    document.getElementById('restart-btn').onclick = () => {
-      current = 0;
-      score = 0;
-      endScreen.style.display = 'none';
-      document.getElementById('question-box').style.display = 'block';
-      loadQuestion();
-    };
-
-    // Initial load
-    loadQuestion();
-  </script>
 </body>
 </html>
