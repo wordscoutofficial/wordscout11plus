@@ -26,19 +26,16 @@
       --light-blue: #e6fbff;
       --pale-yellow: #fffde7;
       --dark: #343434;
-
       --fs-h1: 2.5rem;
       --fs-h2: 1.75rem;
       --fs-h3: 1.5rem;
       --fs-body: 1rem;
-
       --container: 1100px;
       --radius: 14px;
     }
 
     * { box-sizing: border-box; }
     html, body { height: 100%; margin:0; }
-
     body {
       font-family: 'Baloo 2', cursive;
       background: linear-gradient(180deg, var(--cream) 0%, #fffaf0 100%);
@@ -48,14 +45,7 @@
       font-size: var(--fs-body);
     }
 
-    .section {
-      max-width: var(--container);
-      margin: 2.5rem auto;
-      padding: 2.25rem;
-      border-radius: var(--radius);
-      box-shadow: 0 6px 30px rgba(52,52,52,0.06);
-      background: white;
-    }
+    .section { max-width: var(--container); margin: 2.5rem auto; padding: 2.25rem; border-radius: var(--radius); box-shadow: 0 6px 30px rgba(52,52,52,0.06); background: white; }
 
     header {
       position: sticky; top: 0; z-index: 40;
@@ -64,35 +54,11 @@
       gap: 1rem;
       padding: .9rem 1.5rem;
     }
-
-    header .brand {
-      display:flex; align-items:center; gap:.9rem;
-    }
-    header h1 {
-      margin: 0;
-      font-family: 'Baloo 2', cursive;
-      font-weight: 700;
-      font-size: 1.5rem;
-      color: var(--dark);
-    }
-    header .tagline { font-size: .9rem; color: var(--blue); font-weight: 600; }
-
+    header .brand { display:flex; align-items:center; gap:.9rem; }
+    header h1 { margin: 0; font-family: 'Baloo 2', cursive; font-weight: 700; font-size: 1.5rem; color: var(--dark); }
     nav { display:flex; align-items:center; gap: .75rem; }
-    nav a {
-      text-decoration: none;
-      color: var(--dark);
-      padding: .45rem .6rem;
-      border-radius: 10px;
-      font-weight: 600;
-      transition: all .18s ease;
-      font-size: .95rem;
-    }
-    nav a:hover {
-      color: white;
-      background: linear-gradient(90deg, var(--blue), #00d4ff);
-      transform: translateY(-2px);
-      box-shadow: 0 6px 18px rgba(0,181,202,0.15);
-    }
+    nav a { text-decoration: none; color: var(--dark); padding: .45rem .6rem; border-radius: 10px; font-weight: 600; transition: all .18s ease; font-size: .95rem; }
+    nav a:hover { color: white; background: linear-gradient(90deg, var(--blue), #00d4ff); transform: translateY(-2px); box-shadow: 0 6px 18px rgba(0,181,202,0.15); }
 
     .hero {
       border-radius: 16px;
@@ -107,45 +73,20 @@
       gap: 1.25rem;
       align-items: center;
     }
-    .hero h2 {
-      margin: 0 0 .5rem 0;
-      font-family: 'Baloo 2', cursive;
-      font-size: var(--fs-h1);
-      letter-spacing: -0.5px;
-      line-height: 1.05;
-    }
+    .hero h2 { margin: 0 0 .5rem 0; font-family: 'Baloo 2', cursive; font-size: var(--fs-h1); letter-spacing: -0.5px; line-height: 1.05; }
     .hero p { margin: 0; opacity: .95; font-weight: 500; }
-
     .hero .cta { display:flex; flex-direction:column; gap:.6rem; align-items:end; }
     .btn {
-      display: inline-block;
-      margin: .25rem 0;
-      padding: .75rem 1.2rem;
-      background: white;
-      color: var(--blue);
-      font-weight: 700;
-      border-radius: 12px;
-      text-decoration: none;
-      box-shadow: 0 8px 24px rgba(0,0,0,0.08);
+      display: inline-block; margin: .25rem 0; padding: .75rem 1.2rem;
+      background: white; color: var(--blue); font-weight: 700; border-radius: 12px;
+      text-decoration: none; box-shadow: 0 8px 24px rgba(0,0,0,0.08);
       transition: transform .15s ease, box-shadow .15s ease;
-      font-size: .95rem;
+      font-size: .95rem; cursor: pointer;
     }
-    .btn.secondary {
-      background: rgba(255,255,255,0.12);
-      color: white;
-      border: 1px solid rgba(255,255,255,0.12);
-      font-weight: 600;
-    }
+    .btn.secondary { background: rgba(255,255,255,0.12); color: white; border: 1px solid rgba(255,255,255,0.12); font-weight: 600; }
     .btn:hover { transform: translateY(-4px); box-shadow: 0 18px 40px rgba(0,0,0,0.12); }
 
-    .section h3 {
-      font-family: 'Baloo 2', cursive;
-      font-weight: 700;
-      font-size: var(--fs-h3);
-      margin-top: 0;
-      margin-bottom: 1rem;
-      color: var(--blue);
-    }
+    .section h3 { font-family: 'Baloo 2', cursive; font-weight: 700; font-size: var(--fs-h3); margin-top: 0; margin-bottom: 1rem; color: var(--blue); }
 
     #about { background: linear-gradient(180deg, var(--pale-yellow), #fffef8); }
     #books { background: linear-gradient(180deg, var(--light-blue), #f6feff); text-align: center; }
@@ -161,8 +102,39 @@
     .book-card { width: 260px; padding:1.25rem; border-radius: 12px; background: white; box-shadow: 0 8px 24px rgba(17,24,39,0.04); text-align:left; display:flex; flex-direction:column; gap:.75rem; align-items:flex-start; }
     .book-card h4 { margin:0; font-size:1.05rem; font-weight:700; font-family: 'Baloo 2', cursive; }
     .book-card a { margin-top:auto; }
-
     footer { text-align:center; padding:2rem; background: transparent; color: rgba(52,52,52,0.75); font-size: .95rem; margin-top:1.5rem; }
+
+    /* QUIZ STYLES */
+    #quiz-box { display: grid; gap: 1.5rem; text-align: center; }
+    .quiz-card {
+      background: linear-gradient(135deg, #00b5ca 0%, #00d4ff 100%);
+      color: white;
+      padding: 2rem;
+      border-radius: var(--radius);
+      box-shadow: 0 12px 40px rgba(0,181,202,0.18);
+      transition: all 0.4s ease;
+    }
+    #options button {
+      display: block;
+      margin: .5rem auto;
+      width: 70%;
+      padding: .6rem 0;
+      border-radius: 10px;
+      border: none;
+      font-weight: 600;
+      transition: all 0.3s ease;
+      cursor: pointer;
+      background: white;
+      color: var(--blue);
+      box-shadow: 0 6px 18px rgba(0,181,202,0.15);
+    }
+    #options button:hover { transform: scale(1.05); box-shadow: 0 8px 24px rgba(0,181,202,0.25); }
+    #options button.correct { background: #4caf50 !important; color: white; box-shadow: 0 8px 24px rgba(76,175,80,0.4); }
+    #options button.incorrect { background: #f44336 !important; color: white; box-shadow: 0 8px 24px rgba(244,67,54,0.4); }
+    #end-screen input { padding: 0.5rem; width: 60%; border-radius: 8px; border: none; margin-bottom: 1rem; }
+    #leaderboard { background: var(--cream); color: var(--blue); border-radius: var(--radius); padding: 1rem; }
+    #leaderboard ol { list-style: none; padding: 0; margin: 0; }
+    #leaderboard li { font-weight: 600; padding: .3rem 0; }
 
     @media (max-width: 880px) {
       .hero { grid-template-columns: 1fr; text-align: left; align-items: start; }
@@ -177,73 +149,185 @@
   </style>
 </head>
 <body>
-  <header>
-    <div class="brand">
-      <h1>WordScout11Plus</h1>
+<header>
+  <div class="brand"><h1>WordScout11Plus</h1></div>
+  <nav>
+    <a href="#about">About</a>
+    <a href="#books">Books</a>
+    <a href="#reviews">Reviews</a>
+    <a href="#sessions">11+ Sessions</a>
+    <a href="#contact">Contact</a>
+    <a href="#quiz">Quiz</a>
+  </nav>
+</header>
+
+<section class="hero">
+  <div><h2>Master 11+ Vocabulary &amp; Spelling</h2><p>Fun, colourful, and expertly designed books to help children thrive in their 11+ journey.</p></div>
+  <div class="cta"><a class="btn" href="#books">See the Books</a><a class="btn secondary" href="#contact">Contact Us</a></div>
+</section>
+
+<section class="section" id="about">
+  <h3>About</h3>
+  <p><strong>WordScout11Plus</strong> and <strong>SpellScout11Plus</strong> are fun, vibrant learning companions designed to <strong>boost your child’s confidence</strong> and performance in the 11+ exams. With colourful visuals, interactive quizzes, and thoughtfully chosen vocabulary, our books turn practice into play — helping children absorb, remember, and <strong>enjoy learning new words every day.</strong></p>
+</section>
+
+<section class="section" id="books">
+  <h3>Books</h3>
+  <div class="books-row" role="list">
+    <div class="book-card" role="listitem">
+      <h4>WordScout</h4>
+      <p>Compact, bright, and made for daily practice — carefully chosen words, definitions and example sentences.</p>
+      <a class="btn" href="https://www.amazon.co.uk/dp/B0DJ2WSP35" target="_blank">Buy WordScout</a>
     </div>
-    <nav>
-      <a href="#about">About</a>
-      <a href="#books">Books</a>
-      <a href="#reviews">Reviews</a>
-      <a href="#sessions">11+ Sessions</a>
-      <a href="#contact">Contact</a>
-    </nav>
-  </header>
-
-  <section class="hero">
-    <div>
-      <h2>Master 11+ Vocabulary &amp; Spelling</h2>
-      <p>Fun, colourful, and expertly designed books to help children thrive in their 11+ journey.</p>
+    <div class="book-card" role="listitem">
+      <h4>SpellScout</h4>
+      <p>A handy notebook companion to practise spelling, record tricky words and revisit progress.</p>
+      <a class="btn" href="https://www.amazon.co.uk/SpellScout-Notebook-Exam-Preparation-Words-Even/dp/B0FDVJ6FHZ" target="_blank">Buy SpellScout</a>
     </div>
-    <div class="cta">
-      <a class="btn" href="#books">See the Books</a>
-      <a class="btn secondary" href="#contact">Contact Us</a>
+  </div>
+</section>
+
+<section class="section" id="reviews">
+  <h3>Reviews</h3>
+  <p><em>"If your child is preparing for the 11+, a strong and rich vocabulary is essential..."</em> – Silviu</p>
+  <p><em>"Great little book for children to record their new words..."</em> – Ellie</p>
+  <p><em>"An easy tool to record and learn new words..."</em> – Andrea</p>
+</section>
+
+<section class="section" id="sessions">
+  <h3>11+ Sessions – September 2025</h3>
+  <p>We are running <strong>special 11+ preparation sessions</strong> in September 2025. Join our WhatsApp group for details and updates:</p>
+  <p><a class="btn" href="https://chat.whatsapp.com/LXyHkp6e761ChwcSU8YhWP?mode=ems_copy_t" target="_blank">Join WhatsApp Group</a></p>
+</section>
+
+<section class="section" id="contact">
+  <h3>Contact</h3>
+  <p>For enquiries, partnerships or feedback, email us:</p>
+  <p><a href="mailto:wordscout11plus@gmail.com">wordscout11plus@gmail.com</a></p>
+</section>
+
+<section class="section" id="quiz">
+  <h3>WordScout Quiz</h3>
+  <p>Test your 11+ vocabulary and see your name on the leaderboard!</p>
+  <div id="quiz-box">
+    <div id="question-box" class="quiz-card">
+      <p id="question-text">Loading question...</p>
+      <div id="options"></div>
+      <button id="next-btn" class="btn" style="display:none;">Next</button>
     </div>
-  </section>
-
-  <section class="section" id="about">
-    <h3>About</h3>
-    <p><strong>WordScout11Plus</strong> and <strong>SpellScout11Plus</strong> are fun, vibrant learning companions designed to <strong>boost your child’s confidence</strong> and performance in the 11+ exams. With colourful visuals, interactive quizzes, and thoughtfully chosen vocabulary, our books turn practice into play — helping children absorb, remember, and <strong>enjoy learning new words every day.</strong></p>
-  </section>
-
-  <section class="section" id="books">
-    <h3>Books</h3>
-    <div class="books-row" role="list">
-      <div class="book-card" role="listitem">
-        <h4>WordScout</h4>
-        <p>Compact, bright, and made for daily practice — carefully chosen words, definitions and example sentences.</p>
-        <a class="btn" href="https://www.amazon.co.uk/dp/B0DJ2WSP35" target="_blank">Buy WordScout</a>
-      </div>
-
-      <div class="book-card" role="listitem">
-        <h4>SpellScout</h4>
-        <p>A handy notebook companion to practise spelling, record tricky words and revisit progress.</p>
-        <a class="btn" href="https://www.amazon.co.uk/SpellScout-Notebook-Exam-Preparation-Words-Even/dp/B0FDVJ6FHZ" target="_blank">Buy SpellScout</a>
-      </div>
+    <div id="end-screen" class="quiz-card" style="display:none;">
+      <h4>Your Score: <span id="score"></span></h4>
+      <input id="player-name" type="text" placeholder="Enter your name">
+      <button id="submit-score" class="btn">Submit Score</button>
     </div>
-  </section>
+    <div id="leaderboard" class="quiz-card">
+      <h4>Leaderboard</h4>
+      <ol id="leaderboard-list"></ol>
+    </div>
+  </div>
+</section>
 
-  <section class="section" id="reviews">
-    <h3>Reviews</h3>
-    <p><em>"If your child is preparing for the 11+, a strong and rich vocabulary is essential..."</em> – Silviu</p>
-    <p><em>"Great little book for children to record their new words..."</em> – Ellie</p>
-    <p><em>"An easy tool to record and learn new words..."</em> – Andrea</p>
-  </section>
+<footer>
+  <p>&copy; 2025 WordScout11Plus. All rights reserved.</p>
+</footer>
 
-  <section class="section" id="sessions">
-    <h3>11+ Sessions – September 2025</h3>
-    <p>We are running <strong>special 11+ preparation sessions</strong> in September 2025. Join our WhatsApp group for details and updates:</p>
-    <p><a class="btn" href="https://chat.whatsapp.com/LXyHkp6e761ChwcSU8YhWP?mode=ems_copy_t" target="_blank">Join WhatsApp Group</a></p>
-  </section>
+<script type="module">
+import { initializeApp } from "https://www.gstatic.com/firebasejs/12.5.0/firebase-app.js";
+import { getAnalytics } from "https://www.gstatic.com/firebasejs/12.5.0/firebase-analytics.js";
+import { getDatabase, ref, push, query, orderByChild, limitToLast, onValue } from "https://www.gstatic.com/firebasejs/12.5.0/firebase-database.js";
 
-  <section class="section" id="contact">
-    <h3>Contact</h3>
-    <p>For enquiries, partnerships or feedback, email us:</p>
-    <p><a href="mailto:wordscout11plus@gmail.com">wordscout11plus@gmail.com</a></p>
-  </section>
+const firebaseConfig = {
+  apiKey: "AIzaSyA7m1T6r2jyYKen2Kma-q6qJCSIT5zPqoM",
+  authDomain: "wordscout-quiz.firebaseapp.com",
+  databaseURL: "https://wordscout-quiz-default-rtdb.firebaseio.com",
+  projectId: "wordscout-quiz",
+  storageBucket: "wordscout-quiz.firebasestorage.app",
+  messagingSenderId: "128210682107",
+  appId: "1:128210682107:web:a0a16cf74f45bf02f0705e",
+  measurementId: "G-NS2Z8083ZJ"
+};
 
-  <footer>
-    <p>&copy; 2025 WordScout11Plus. All rights reserved.</p>
-  </footer>
+const app = initializeApp(firebaseConfig);
+const analytics = getAnalytics(app);
+const db = getDatabase(app);
+
+// Quiz questions
+const quizData = [
+  { q: "What does 'benevolent' mean?", options: ["Kind and generous", "Angry", "Loud", "Lazy"], correct: 0 },
+  { q: "Choose the correct spelling:", options: ["Definately", "Definitely", "Definetly", "Defenitely"], correct: 1 },
+  { q: "What is the opposite of 'expand'?", options: ["Increase", "Enlarge", "Shrink", "Grow"], correct: 2 },
+  { q: "Which word means 'brave'?", options: ["Timid", "Courageous", "Fearful", "Shy"], correct: 1 },
+];
+
+let current = 0, score = 0;
+const qText = document.getElementById('question-text');
+const optionsDiv = document.getElementById('options');
+const nextBtn = document.getElementById('next-btn');
+const endScreen = document.getElementById('end-screen');
+const scoreSpan = document.getElementById('score');
+const leaderboardList = document.getElementById('leaderboard-list');
+
+function loadQuestion() {
+  const q = quizData[current];
+  qText.textContent = q.q;
+  optionsDiv.innerHTML = "";
+  nextBtn.style.display = "none";
+  q.options.forEach((opt, i) => {
+    const btn = document.createElement('button');
+    btn.textContent = opt;
+    btn.className = "btn";
+    btn.onclick = () => selectAnswer(btn, i);
+    optionsDiv.appendChild(btn);
+  });
+}
+
+function selectAnswer(btn, index) {
+  const q = quizData[current];
+  Array.from(optionsDiv.children).forEach(b => b.disabled = true);
+  if (index === q.correct) {
+    btn.classList.add('correct');
+    score++;
+  } else {
+    btn.classList.add('incorrect');
+    Array.from(optionsDiv.children)[q.correct].classList.add('correct');
+  }
+  nextBtn.style.display = 'inline-block';
+}
+
+nextBtn.onclick = () => {
+  current++;
+  if (current < quizData.length) {
+    loadQuestion();
+  } else {
+    document.getElementById('question-box').style.display = 'none';
+    endScreen.style.display = 'block';
+    scoreSpan.textContent = score + " / " + quizData.length;
+  }
+};
+
+function updateLeaderboard() {
+  const topScoresQuery = query(ref(db, 'leaderboard'), orderByChild('score'), limitToLast(10));
+  onValue(topScoresQuery, (snapshot) => {
+    const list = [];
+    snapshot.forEach((child) => list.push(child.val()));
+    list.sort((a,b)=>b.score - a.score);
+    leaderboardList.innerHTML = list.map(item=>`<li>${item.name}: ${item.score}</li>`).join('');
+  });
+}
+
+document.getElementById('submit-score').onclick = () => {
+  const name = document.getElementById('player-name').value.trim();
+  if (!name) return alert("Please enter your name!");
+  push(ref(db, 'leaderboard'), { name, score });
+  endScreen.style.display = 'none';
+  current = 0;
+  score = 0;
+  document.getElementById('question-box').style.display = 'block';
+  loadQuestion();
+};
+
+loadQuestion();
+updateLeaderboard();
+</script>
 </body>
 </html>
