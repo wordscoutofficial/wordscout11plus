@@ -1,21 +1,18 @@
-<!-- trigger GitHub Pages -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-BJ8FQH5HQM"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-BJ8FQH5HQM"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
 
-  gtag('config', 'G-BJ8FQH5HQM');
-</script>
+    gtag('config', 'G-BJ8FQH5HQM');
+  </script>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>WordScout11Plus</title>
 
-  <!-- Fonts: Kid-friendly Baloo font -->
   <link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@400;700&display=swap" rel="stylesheet">
 
   <style>
@@ -26,6 +23,7 @@
       --light-blue: #e6fbff;
       --pale-yellow: #fffde7;
       --dark: #343434;
+      --youtube-red: #ff0000; 
 
       --fs-h1: 2.5rem;
       --fs-h2: 1.75rem;
@@ -117,6 +115,7 @@
     .hero p { margin: 0; opacity: .95; font-weight: 500; }
 
     .hero .cta { display:flex; flex-direction:column; gap:.6rem; align-items:end; }
+    
     .btn {
       display: inline-block;
       margin: .25rem 0;
@@ -129,6 +128,8 @@
       box-shadow: 0 8px 24px rgba(0,0,0,0.08);
       transition: transform .15s ease, box-shadow .15s ease;
       font-size: .95rem;
+      border: none;
+      cursor: pointer;
     }
     .btn.secondary {
       background: rgba(255,255,255,0.12);
@@ -136,6 +137,16 @@
       border: 1px solid rgba(255,255,255,0.12);
       font-weight: 600;
     }
+    /* Specific style for the YouTube button */
+    .btn.youtube-btn {
+        background: var(--youtube-red);
+        color: white;
+    }
+    .btn.youtube-btn:hover {
+        background: #cc0000;
+        box-shadow: 0 10px 25px rgba(255, 0, 0, 0.3);
+    }
+
     .btn:hover { transform: translateY(-4px); box-shadow: 0 18px 40px rgba(0,0,0,0.12); }
 
     .section h3 {
@@ -149,6 +160,34 @@
 
     #about { background: linear-gradient(180deg, var(--pale-yellow), #fffef8); }
     #books { background: linear-gradient(180deg, var(--light-blue), #f6feff); text-align: center; }
+    
+    /* YouTube Section Styling */
+    #youtube-section { 
+        background: linear-gradient(180deg, #fff0f0, #fff); /* Subtle reddish tint */
+    }
+    .youtube-layout {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 2rem;
+        align-items: center;
+    }
+    .video-wrapper {
+        position: relative;
+        padding-bottom: 56.25%; /* 16:9 Aspect Ratio */
+        height: 0;
+        border-radius: 12px;
+        overflow: hidden;
+        box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+        background: #000;
+    }
+    .video-wrapper iframe {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+    }
+
     #reviews { background: linear-gradient(180deg, var(--yellow), #fff9d6); color: var(--blue); }
     #sessions { background: linear-gradient(180deg, #fffdf6, #fffaf0); }
     #contact { background: linear-gradient(180deg, #f0fdff, #f6ffff); }
@@ -168,6 +207,7 @@
       .hero { grid-template-columns: 1fr; text-align: left; align-items: start; }
       header { padding: .8rem 1rem; }
       .section { margin: 1.25rem; padding: 1.25rem; }
+      .youtube-layout { grid-template-columns: 1fr; } /* Stack video on mobile */
     }
     @media (max-width: 480px) {
       :root { --fs-h1: 1.5rem; --fs-h2: 1.25rem; }
@@ -184,7 +224,7 @@
     <nav>
       <a href="#about">About</a>
       <a href="#books">Books</a>
-      <a href="#reviews">Reviews</a>
+      <a href="#youtube-section">Videos</a> <a href="#reviews">Reviews</a>
       <a href="#sessions">11+ Sessions</a>
       <a href="#contact">Contact</a>
     </nav>
@@ -223,6 +263,30 @@
     </div>
   </section>
 
+  <section class="section" id="youtube-section">
+    <h3>📺 Watch & Learn with WordScout!</h3>
+    <div class="youtube-layout">
+        <div class="youtube-text">
+            <p>Learning is even better when you can see it in action! Check out our <strong>WordScout YouTube channel</strong> for fun lessons, spelling challenges, and top tips for the 11+ exam.</p>
+            <p>Don't miss a single trick—subscribe to get notified when we post new videos.</p>
+            <br>
+            <a class="btn youtube-btn" href="https://www.youtube.com/@wordscout11plus" target="_blank">
+                Subscribe on YouTube
+            </a>
+        </div>
+        <div class="youtube-video">
+            <div class="video-wrapper">
+                <iframe 
+                    src="https://www.youtube.com/watch?v=LsUy6pLYRa0" 
+                    title="WordScout Video" 
+                    frameborder="0" 
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+                    allowfullscreen>
+                </iframe>
+            </div>
+        </div>
+    </div>
+  </section>
   <section class="section" id="reviews">
     <h3>Reviews</h3>
     <p><em>"If your child is preparing for the 11+, a strong and rich vocabulary is essential..."</em> – Silviu</p>
