@@ -13,7 +13,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>WordScout11Plus</title>
 
-  <link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@400;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@400;600;700;800&display=swap" rel="stylesheet">
 
   <style>
     :root {
@@ -23,7 +23,9 @@
       --light-blue: #e6fbff;
       --pale-yellow: #fffde7;
       --dark: #343434;
-      --youtube-red: #ff0000; 
+      --youtube-red: #ff0000;
+      --green: #4caf50;
+      --red: #f44336;
 
       --fs-h1: 2.5rem;
       --fs-h2: 1.75rem;
@@ -61,6 +63,7 @@
       display: flex; align-items: center; justify-content: space-between;
       gap: 1rem;
       padding: .9rem 1.5rem;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.05);
     }
 
     header .brand {
@@ -69,23 +72,22 @@
     header h1 {
       margin: 0;
       font-family: 'Baloo 2', cursive;
-      font-weight: 700;
+      font-weight: 800;
       font-size: 1.5rem;
       color: var(--dark);
     }
-    header .tagline { font-size: .9rem; color: var(--blue); font-weight: 600; }
 
-    nav { display:flex; align-items:center; gap: .75rem; }
+    nav { display:flex; align-items:center; gap: .5rem; }
     nav a {
       text-decoration: none;
       color: var(--dark);
-      padding: .45rem .6rem;
+      padding: .45rem .8rem;
       border-radius: 10px;
-      font-weight: 600;
-      transition: all .18s ease;
+      font-weight: 700;
+      transition: all .2s ease;
       font-size: .95rem;
     }
-    nav a:hover {
+    nav a:hover, nav a.active {
       color: white;
       background: linear-gradient(90deg, var(--blue), #00d4ff);
       transform: translateY(-2px);
@@ -110,34 +112,33 @@
       font-family: 'Baloo 2', cursive;
       font-size: var(--fs-h1);
       letter-spacing: -0.5px;
-      line-height: 1.05;
+      line-height: 1.1;
+      font-weight: 800;
     }
-    .hero p { margin: 0; opacity: .95; font-weight: 500; }
+    .hero p { margin: 0; opacity: .95; font-weight: 600; font-size: 1.1rem; }
 
     .hero .cta { display:flex; flex-direction:column; gap:.6rem; align-items:end; }
     
     .btn {
       display: inline-block;
       margin: .25rem 0;
-      padding: .75rem 1.2rem;
+      padding: .75rem 1.5rem;
       background: white;
       color: var(--blue);
-      font-weight: 700;
+      font-weight: 800;
       border-radius: 12px;
       text-decoration: none;
       box-shadow: 0 8px 24px rgba(0,0,0,0.08);
       transition: transform .15s ease, box-shadow .15s ease;
-      font-size: .95rem;
+      font-size: 1rem;
       border: none;
       cursor: pointer;
     }
     .btn.secondary {
-      background: rgba(255,255,255,0.12);
+      background: rgba(255,255,255,0.2);
       color: white;
-      border: 1px solid rgba(255,255,255,0.12);
-      font-weight: 600;
+      backdrop-filter: blur(5px);
     }
-    /* Specific style for the YouTube button */
     .btn.youtube-btn {
         background: var(--youtube-red);
         color: white;
@@ -146,12 +147,11 @@
         background: #cc0000;
         box-shadow: 0 10px 25px rgba(255, 0, 0, 0.3);
     }
-
     .btn:hover { transform: translateY(-4px); box-shadow: 0 18px 40px rgba(0,0,0,0.12); }
 
     .section h3 {
       font-family: 'Baloo 2', cursive;
-      font-weight: 700;
+      font-weight: 800;
       font-size: var(--fs-h3);
       margin-top: 0;
       margin-bottom: 1rem;
@@ -161,9 +161,74 @@
     #about { background: linear-gradient(180deg, var(--pale-yellow), #fffef8); }
     #books { background: linear-gradient(180deg, var(--light-blue), #f6feff); text-align: center; }
     
+    /* QUIZ SECTION STYLES */
+    #quiz {
+        background: linear-gradient(135deg, #fff 0%, #f0f7ff 100%);
+        text-align: center;
+        border: 2px solid var(--light-blue);
+    }
+    .quiz-container {
+        max-width: 600px;
+        margin: 0 auto;
+        background: white;
+        padding: 2rem;
+        border-radius: 16px;
+        box-shadow: 0 10px 30px rgba(0,181,202,0.1);
+    }
+    .quiz-question {
+        font-size: 1.4rem;
+        font-weight: 700;
+        margin-bottom: 1.5rem;
+        color: var(--dark);
+    }
+    .quiz-options {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 1rem;
+    }
+    .quiz-btn {
+        background: var(--light-blue);
+        border: 2px solid transparent;
+        padding: 1rem;
+        border-radius: 12px;
+        font-family: 'Baloo 2', cursive;
+        font-weight: 700;
+        font-size: 1.1rem;
+        cursor: pointer;
+        color: var(--blue);
+        transition: all 0.2s;
+    }
+    .quiz-btn:hover {
+        background: var(--blue);
+        color: white;
+        transform: translateY(-2px);
+    }
+    .quiz-btn.correct {
+        background: var(--green);
+        color: white;
+        border-color: var(--green);
+    }
+    .quiz-btn.wrong {
+        background: var(--red);
+        color: white;
+        border-color: var(--red);
+    }
+    .quiz-feedback {
+        margin-top: 1.5rem;
+        font-weight: 700;
+        font-size: 1.2rem;
+        min-height: 1.8rem;
+    }
+    .score-board {
+        margin-top: 1rem;
+        font-size: 0.9rem;
+        color: #888;
+        font-weight: 600;
+    }
+    
     /* YouTube Section Styling */
     #youtube-section { 
-        background: linear-gradient(180deg, #fff0f0, #fff); /* Subtle reddish tint */
+        background: linear-gradient(180deg, #fff0f0, #fff);
     }
     .youtube-layout {
         display: grid;
@@ -192,27 +257,42 @@
     #sessions { background: linear-gradient(180deg, #fffdf6, #fffaf0); }
     #contact { background: linear-gradient(180deg, #f0fdff, #f6ffff); }
 
-    p { font-size: 1rem; color: rgba(52,52,52,0.95); }
+    p { font-size: 1.05rem; color: rgba(52,52,52,0.9); }
     strong { font-weight: 700; }
     em { font-style: italic; }
 
-    .books-row { display:flex; gap:1rem; align-items:stretch; justify-content:center; flex-wrap:wrap; }
-    .book-card { width: 260px; padding:1.25rem; border-radius: 12px; background: white; box-shadow: 0 8px 24px rgba(17,24,39,0.04); text-align:left; display:flex; flex-direction:column; gap:.75rem; align-items:flex-start; }
-    .book-card h4 { margin:0; font-size:1.05rem; font-weight:700; font-family: 'Baloo 2', cursive; }
-    .book-card a { margin-top:auto; }
+    .books-row { display:flex; gap:1.5rem; align-items:stretch; justify-content:center; flex-wrap:wrap; }
+    .book-card { 
+        width: 280px; 
+        padding:1.5rem; 
+        border-radius: 16px; 
+        background: white; 
+        box-shadow: 0 10px 25px rgba(17,24,39,0.06); 
+        text-align:left; 
+        display:flex; 
+        flex-direction:column; 
+        gap:.75rem; 
+        align-items:flex-start; 
+        transition: transform 0.2s;
+    }
+    .book-card:hover { transform: translateY(-5px); }
+    .book-card h4 { margin:0; font-size:1.2rem; font-weight:800; font-family: 'Baloo 2', cursive; color: var(--blue); }
+    .book-card a { margin-top:auto; width: 100%; text-align: center; }
 
-    footer { text-align:center; padding:2rem; background: transparent; color: rgba(52,52,52,0.75); font-size: .95rem; margin-top:1.5rem; }
+    footer { text-align:center; padding:2rem; background: transparent; color: rgba(52,52,52,0.6); font-size: .9rem; margin-top:1.5rem; font-weight: 600; }
 
     @media (max-width: 880px) {
       .hero { grid-template-columns: 1fr; text-align: left; align-items: start; }
       header { padding: .8rem 1rem; }
-      .section { margin: 1.25rem; padding: 1.25rem; }
-      .youtube-layout { grid-template-columns: 1fr; } /* Stack video on mobile */
+      .section { margin: 1.5rem; padding: 1.5rem; }
+      .youtube-layout { grid-template-columns: 1fr; }
+      .quiz-options { grid-template-columns: 1fr; }
     }
     @media (max-width: 480px) {
-      :root { --fs-h1: 1.5rem; --fs-h2: 1.25rem; }
+      :root { --fs-h1: 1.75rem; --fs-h2: 1.4rem; }
       header h1 { font-size: 1.25rem; }
       nav { display:none; }
+      .hero { padding: 2rem 1.5rem; }
     }
   </style>
 </head>
@@ -224,8 +304,8 @@
     <nav>
       <a href="#about">About</a>
       <a href="#books">Books</a>
-      <a href="#youtube-section">Videos</a> <a href="#reviews">Reviews</a>
-      <a href="#sessions">11+ Sessions</a>
+      <a href="#quiz" style="color:var(--blue); background: var(--light-blue);">Play Quiz!</a>
+      <a href="#youtube-section">Videos</a>
       <a href="#contact">Contact</a>
     </nav>
   </header>
@@ -237,13 +317,27 @@
     </div>
     <div class="cta">
       <a class="btn" href="#books">See the Books</a>
-      <a class="btn secondary" href="#contact">Contact Us</a>
+      <a class="btn secondary" href="#quiz">Try the Quiz</a>
     </div>
   </section>
 
   <section class="section" id="about">
     <h3>About</h3>
-    <p><strong>WordScout11Plus</strong> and <strong>SpellScout11Plus</strong> are fun, vibrant learning companions designed to <strong>boost your child’s confidence</strong> and performance in the 11+ exams. With colourful visuals, interactive quizzes, and thoughtfully chosen vocabulary, our books turn practice into play — helping children absorb, remember, and <strong>enjoy learning new words every day.</strong></p>
+    <p><strong>WordScout11Plus</strong> and <strong>SpellScout11Plus</strong> are fun, vibrant learning companions designed to <strong>boost your child’s confidence</strong> and performance in the 11+ exams. With colourful visuals, interactive quizzes, and thoughtfully chosen vocabulary, our books turn practice into play.</p>
+  </section>
+
+  <section class="section" id="quiz">
+    <h3>🦁 Daily Word Challenge</h3>
+    <p style="margin-bottom: 1.5rem;">Test your 11+ skills! Can you pick the correct answer?</p>
+    
+    <div class="quiz-container">
+        <div id="question-text" class="quiz-question">Loading Question...</div>
+        <div id="options-container" class="quiz-options">
+            </div>
+        <div id="feedback" class="quiz-feedback"></div>
+        <div class="score-board">Score: <span id="score">0</span></div>
+        <button id="next-btn" class="btn" style="margin-top: 1rem; display:none;" onclick="nextQuestion()">Next Question</button>
+    </div>
   </section>
 
   <section class="section" id="books">
@@ -277,7 +371,7 @@
         <div class="youtube-video">
             <div class="video-wrapper">
                 <iframe 
-                    src="https://www.youtube.com/watch?v=LsUy6pLYRa0" 
+                    src="https://www.youtube.com/embed/LsUy6pLYRa0" 
                     title="WordScout Video" 
                     frameborder="0" 
                     allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
@@ -287,6 +381,7 @@
         </div>
     </div>
   </section>
+
   <section class="section" id="reviews">
     <h3>Reviews</h3>
     <p><em>"If your child is preparing for the 11+, a strong and rich vocabulary is essential..."</em> – Silviu</p>
@@ -303,11 +398,114 @@
   <section class="section" id="contact">
     <h3>Contact</h3>
     <p>For enquiries, partnerships or feedback, email us:</p>
-    <p><a href="mailto:wordscout11plus@gmail.com">wordscout11plus@gmail.com</a></p>
+    <p><a href="mailto:wordscout11plus@gmail.com" style="color:var(--blue); font-weight:700;">wordscout11plus@gmail.com</a></p>
   </section>
 
   <footer>
     <p>&copy; 2025 WordScout11Plus. All rights reserved.</p>
   </footer>
+
+  <script>
+    const questions = [
+        {
+            text: "Which word is a synonym for 'Elated'?",
+            options: ["Sad", "Overjoyed", "Bored", "Angry"],
+            correct: 1 // Index of correct answer
+        },
+        {
+            text: "Complete the Simile: As blind as a...",
+            options: ["Bat", "Cat", "Rat", "Hat"],
+            correct: 0
+        },
+        {
+            text: "Which word is an antonym for 'Brave'?",
+            options: ["Courageous", "Bold", "Cowardly", "Heroic"],
+            correct: 2
+        },
+        {
+            text: "Which word is spelled correctly?",
+            options: ["Neccessary", "Necessary", "Necesary", "Neccesary"],
+            correct: 1
+        },
+        {
+            text: "What does 'Fatigue' mean?",
+            options: ["Hunger", "Energy", "Tiredness", "Speed"],
+            correct: 2
+        }
+    ];
+
+    let currentQuestion = 0;
+    let score = 0;
+
+    function loadQuestion() {
+        const q = questions[currentQuestion];
+        document.getElementById('question-text').innerText = q.text;
+        document.getElementById('feedback').innerText = "";
+        document.getElementById('next-btn').style.display = "none";
+        
+        const container = document.getElementById('options-container');
+        container.innerHTML = ''; // Clear previous options
+
+        q.options.forEach((option, index) => {
+            const btn = document.createElement('button');
+            btn.className = 'quiz-btn';
+            btn.innerText = option;
+            btn.onclick = () => checkAnswer(index, btn);
+            container.appendChild(btn);
+        });
+    }
+
+    function checkAnswer(selectedIndex, btnElement) {
+        // Disable all buttons to prevent multiple clicks
+        const allBtns = document.querySelectorAll('.quiz-btn');
+        allBtns.forEach(btn => btn.disabled = true);
+
+        const correctIndex = questions[currentQuestion].correct;
+
+        if (selectedIndex === correctIndex) {
+            btnElement.classList.add('correct');
+            document.getElementById('feedback').innerText = "🎉 Correct! Well done!";
+            document.getElementById('feedback').style.color = "var(--green)";
+            score++;
+            document.getElementById('score').innerText = score;
+        } else {
+            btnElement.classList.add('wrong');
+            // Highlight the correct one
+            allBtns[correctIndex].classList.add('correct');
+            document.getElementById('feedback').innerText = "Oops! Keep trying!";
+            document.getElementById('feedback').style.color = "var(--red)";
+        }
+        
+        document.getElementById('next-btn').style.display = "inline-block";
+    }
+
+    function nextQuestion() {
+        currentQuestion++;
+        if (currentQuestion >= questions.length) {
+            // End of quiz
+            document.getElementById('question-text').innerText = "Quiz Complete!";
+            document.getElementById('options-container').innerHTML = `
+                <div style="grid-column: span 2; font-size: 1.2rem;">
+                    You scored <strong>${score}</strong> out of <strong>${questions.length}</strong>! 🌟
+                </div>`;
+            document.getElementById('feedback').innerText = "";
+            document.getElementById('next-btn').innerText = "Play Again";
+            document.getElementById('next-btn').onclick = resetQuiz;
+        } else {
+            loadQuestion();
+        }
+    }
+
+    function resetQuiz() {
+        currentQuestion = 0;
+        score = 0;
+        document.getElementById('score').innerText = "0";
+        document.getElementById('next-btn').innerText = "Next Question";
+        loadQuestion();
+    }
+
+    // Initialize first question
+    loadQuestion();
+  </script>
 </body>
 </html>
