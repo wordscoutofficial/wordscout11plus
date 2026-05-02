@@ -1,511 +1,777 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+  <!-- Google Analytics -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-BJ8FQH5HQM"></script>
   <script>
     window.dataLayer = window.dataLayer || [];
     function gtag(){dataLayer.push(arguments);}
     gtag('js', new Date());
-
     gtag('config', 'G-BJ8FQH5HQM');
   </script>
+
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="WordScout11Plus — fun, vibrant books and resources to help children master 11+ vocabulary, spelling, and effective study techniques.">
   <title>WordScout11Plus</title>
 
+  <link rel="icon" href="favicon.ico" type="image/x-icon">
   <link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@400;600;700;800&display=swap" rel="stylesheet">
-
-  <style>
-    :root {
-      --yellow: #fcec61;
-      --blue: #00b5ca;
-      --cream: #fef9dc;
-      --light-blue: #e6fbff;
-      --pale-yellow: #fffde7;
-      --dark: #343434;
-      --youtube-red: #ff0000;
-      --green: #4caf50;
-      --red: #f44336;
-
-      --fs-h1: 2.5rem;
-      --fs-h2: 1.75rem;
-      --fs-h3: 1.5rem;
-      --fs-body: 1rem;
-
-      --container: 1100px;
-      --radius: 14px;
-    }
-
-    * { box-sizing: border-box; }
-    html, body { height: 100%; margin:0; }
-
-    body {
-      font-family: 'Baloo 2', cursive;
-      background: linear-gradient(180deg, var(--cream) 0%, #fffaf0 100%);
-      color: var(--dark);
-      line-height: 1.5;
-      scroll-behavior: smooth;
-      font-size: var(--fs-body);
-    }
-
-    .section {
-      max-width: var(--container);
-      margin: 2.5rem auto;
-      padding: 2.25rem;
-      border-radius: var(--radius);
-      box-shadow: 0 6px 30px rgba(52,52,52,0.06);
-      background: white;
-    }
-
-    header {
-      position: sticky; top: 0; z-index: 40;
-      background: var(--cream);
-      display: flex; align-items: center; justify-content: space-between;
-      gap: 1rem;
-      padding: .9rem 1.5rem;
-      box-shadow: 0 4px 12px rgba(0,0,0,0.05);
-    }
-
-    header .brand {
-      display:flex; align-items:center; gap:.9rem;
-    }
-    header h1 {
-      margin: 0;
-      font-family: 'Baloo 2', cursive;
-      font-weight: 800;
-      font-size: 1.5rem;
-      color: var(--dark);
-    }
-
-    nav { display:flex; align-items:center; gap: .5rem; }
-    nav a {
-      text-decoration: none;
-      color: var(--dark);
-      padding: .45rem .8rem;
-      border-radius: 10px;
-      font-weight: 700;
-      transition: all .2s ease;
-      font-size: .95rem;
-    }
-    nav a:hover, nav a.active {
-      color: white;
-      background: linear-gradient(90deg, var(--blue), #00d4ff);
-      transform: translateY(-2px);
-      box-shadow: 0 6px 18px rgba(0,181,202,0.15);
-    }
-
-    .hero {
-      border-radius: 16px;
-      max-width: var(--container);
-      margin: 2.5rem auto;
-      padding: 3.5rem 2.5rem;
-      color: white;
-      background: linear-gradient(135deg, #00b5ca 0%, #00d4ff 100%);
-      box-shadow: 0 12px 40px rgba(0,181,202,0.18);
-      display: grid;
-      grid-template-columns: 1fr auto;
-      gap: 1.25rem;
-      align-items: center;
-    }
-    .hero h2 {
-      margin: 0 0 .5rem 0;
-      font-family: 'Baloo 2', cursive;
-      font-size: var(--fs-h1);
-      letter-spacing: -0.5px;
-      line-height: 1.1;
-      font-weight: 800;
-    }
-    .hero p { margin: 0; opacity: .95; font-weight: 600; font-size: 1.1rem; }
-
-    .hero .cta { display:flex; flex-direction:column; gap:.6rem; align-items:end; }
-    
-    .btn {
-      display: inline-block;
-      margin: .25rem 0;
-      padding: .75rem 1.5rem;
-      background: white;
-      color: var(--blue);
-      font-weight: 800;
-      border-radius: 12px;
-      text-decoration: none;
-      box-shadow: 0 8px 24px rgba(0,0,0,0.08);
-      transition: transform .15s ease, box-shadow .15s ease;
-      font-size: 1rem;
-      border: none;
-      cursor: pointer;
-    }
-    .btn.secondary {
-      background: rgba(255,255,255,0.2);
-      color: white;
-      backdrop-filter: blur(5px);
-    }
-    .btn.youtube-btn {
-        background: var(--youtube-red);
-        color: white;
-    }
-    .btn.youtube-btn:hover {
-        background: #cc0000;
-        box-shadow: 0 10px 25px rgba(255, 0, 0, 0.3);
-    }
-    .btn:hover { transform: translateY(-4px); box-shadow: 0 18px 40px rgba(0,0,0,0.12); }
-
-    .section h3 {
-      font-family: 'Baloo 2', cursive;
-      font-weight: 800;
-      font-size: var(--fs-h3);
-      margin-top: 0;
-      margin-bottom: 1rem;
-      color: var(--blue);
-    }
-
-    #about { background: linear-gradient(180deg, var(--pale-yellow), #fffef8); }
-    #books { background: linear-gradient(180deg, var(--light-blue), #f6feff); text-align: center; }
-    
-    /* QUIZ SECTION STYLES */
-    #quiz {
-        background: linear-gradient(135deg, #fff 0%, #f0f7ff 100%);
-        text-align: center;
-        border: 2px solid var(--light-blue);
-    }
-    .quiz-container {
-        max-width: 600px;
-        margin: 0 auto;
-        background: white;
-        padding: 2rem;
-        border-radius: 16px;
-        box-shadow: 0 10px 30px rgba(0,181,202,0.1);
-    }
-    .quiz-question {
-        font-size: 1.4rem;
-        font-weight: 700;
-        margin-bottom: 1.5rem;
-        color: var(--dark);
-    }
-    .quiz-options {
-        display: grid;
-        grid-template-columns: 1fr 1fr;
-        gap: 1rem;
-    }
-    .quiz-btn {
-        background: var(--light-blue);
-        border: 2px solid transparent;
-        padding: 1rem;
-        border-radius: 12px;
-        font-family: 'Baloo 2', cursive;
-        font-weight: 700;
-        font-size: 1.1rem;
-        cursor: pointer;
-        color: var(--blue);
-        transition: all 0.2s;
-    }
-    .quiz-btn:hover {
-        background: var(--blue);
-        color: white;
-        transform: translateY(-2px);
-    }
-    .quiz-btn.correct {
-        background: var(--green);
-        color: white;
-        border-color: var(--green);
-    }
-    .quiz-btn.wrong {
-        background: var(--red);
-        color: white;
-        border-color: var(--red);
-    }
-    .quiz-feedback {
-        margin-top: 1.5rem;
-        font-weight: 700;
-        font-size: 1.2rem;
-        min-height: 1.8rem;
-    }
-    .score-board {
-        margin-top: 1rem;
-        font-size: 0.9rem;
-        color: #888;
-        font-weight: 600;
-    }
-    
-    /* YouTube Section Styling */
-    #youtube-section { 
-        background: linear-gradient(180deg, #fff0f0, #fff);
-    }
-    .youtube-layout {
-        display: grid;
-        grid-template-columns: 1fr 1fr;
-        gap: 2rem;
-        align-items: center;
-    }
-    .video-wrapper {
-        position: relative;
-        padding-bottom: 56.25%; /* 16:9 Aspect Ratio */
-        height: 0;
-        border-radius: 12px;
-        overflow: hidden;
-        box-shadow: 0 8px 20px rgba(0,0,0,0.15);
-        background: #000;
-    }
-    .video-wrapper iframe {
-        position: absolute;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-    }
-
-    #reviews { background: linear-gradient(180deg, var(--yellow), #fff9d6); color: var(--blue); }
-    #sessions { background: linear-gradient(180deg, #fffdf6, #fffaf0); }
-    #contact { background: linear-gradient(180deg, #f0fdff, #f6ffff); }
-
-    p { font-size: 1.05rem; color: rgba(52,52,52,0.9); }
-    strong { font-weight: 700; }
-    em { font-style: italic; }
-
-    .books-row { display:flex; gap:1.5rem; align-items:stretch; justify-content:center; flex-wrap:wrap; }
-    .book-card { 
-        width: 280px; 
-        padding:1.5rem; 
-        border-radius: 16px; 
-        background: white; 
-        box-shadow: 0 10px 25px rgba(17,24,39,0.06); 
-        text-align:left; 
-        display:flex; 
-        flex-direction:column; 
-        gap:.75rem; 
-        align-items:flex-start; 
-        transition: transform 0.2s;
-    }
-    .book-card:hover { transform: translateY(-5px); }
-    .book-card h4 { margin:0; font-size:1.2rem; font-weight:800; font-family: 'Baloo 2', cursive; color: var(--blue); }
-    .book-card a { margin-top:auto; width: 100%; text-align: center; }
-
-    footer { text-align:center; padding:2rem; background: transparent; color: rgba(52,52,52,0.6); font-size: .9rem; margin-top:1.5rem; font-weight: 600; }
-
-    @media (max-width: 880px) {
-      .hero { grid-template-columns: 1fr; text-align: left; align-items: start; }
-      header { padding: .8rem 1rem; }
-      .section { margin: 1.5rem; padding: 1.5rem; }
-      .youtube-layout { grid-template-columns: 1fr; }
-      .quiz-options { grid-template-columns: 1fr; }
-    }
-    @media (max-width: 480px) {
-      :root { --fs-h1: 1.75rem; --fs-h2: 1.4rem; }
-      header h1 { font-size: 1.25rem; }
-      nav { display:none; }
-      .hero { padding: 2rem 1.5rem; }
-    }
-  </style>
+  <link rel="stylesheet" href="wordscout.css">
 </head>
 <body>
+
+  <!-- ══════════════════════════════════════════════════
+       HEADER & NAV
+  ══════════════════════════════════════════════════ -->
   <header>
     <div class="brand">
+      <div class="brand-logo">W</div>
       <h1>WordScout11Plus</h1>
     </div>
-    <nav>
+    <nav aria-label="Main navigation">
       <a href="#about">About</a>
       <a href="#books">Books</a>
-      <a href="#quiz" style="color:var(--blue); background: var(--light-blue);">Play Quiz!</a>
+      <a href="#quiz" class="nav-highlight">Play Quiz!</a>
       <a href="#youtube-section">Videos</a>
+      <a href="#learn-science">Learn Science</a>
+      <a href="#reviews">Reviews</a>
       <a href="#contact">Contact</a>
     </nav>
   </header>
 
-  <section class="hero">
-    <div>
-      <h2>Master 11+ Vocabulary &amp; Spelling</h2>
-      <p>Fun, colourful, and expertly designed books to help children thrive in their 11+ journey.</p>
-    </div>
-    <div class="cta">
-      <a class="btn" href="#books">See the Books</a>
-      <a class="btn secondary" href="#quiz">Try the Quiz</a>
-    </div>
-  </section>
+  <!-- ══════════════════════════════════════════════════
+       HERO
+  ══════════════════════════════════════════════════ -->
+  <div class="hero">
+    <div class="hero-inner">
+      <div class="hero-text">
+        <div class="hero-tag">🏆 Trusted by 11+ families across the UK</div>
+        <h2>Master 11+ Vocabulary<br>&amp; Spelling — the fun way.</h2>
+        <p class="hero-sub">
+          Colourful books, daily quizzes, and science-backed study techniques
+          designed to help your child walk into exam day confident and prepared.
+        </p>
+        <div class="hero-ctas">
+          <a class="btn btn-white" href="#books">See the Books →</a>
+          <a class="btn btn-ghost" href="#quiz">Try the Quiz</a>
+        </div>
+      </div>
 
+      <div class="hero-stats" aria-hidden="true">
+        <div class="hero-stat-pill">
+          <div class="stat-num">500+</div>
+          <div class="stat-label">carefully chosen<br>11+ words</div>
+        </div>
+        <div class="hero-stat-pill">
+          <div class="stat-num">4×</div>
+          <div class="stat-label">better recall with<br>active testing</div>
+        </div>
+        <div class="hero-stat-pill">
+          <div class="stat-num">⭐⭐⭐⭐⭐</div>
+          <div class="stat-label">rated on Amazon</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- TICKER -->
+  <div class="ticker-strip" aria-hidden="true">
+    <div class="ticker-track">
+      <span class="ticker-item"><span class="ticker-sep"></span>Vocabulary that actually appears in 11+ exams</span>
+      <span class="ticker-item"><span class="ticker-sep"></span>Spelling patterns explained simply</span>
+      <span class="ticker-item"><span class="ticker-sep"></span>Testing yourself is 4× more effective than re-reading</span>
+      <span class="ticker-item"><span class="ticker-sep"></span>Short daily practice beats weekend cramming</span>
+      <span class="ticker-item"><span class="ticker-sep"></span>Used by families preparing for GL, CEM &amp; independent school exams</span>
+      <span class="ticker-item"><span class="ticker-sep"></span>Vocabulary that actually appears in 11+ exams</span>
+      <span class="ticker-item"><span class="ticker-sep"></span>Spelling patterns explained simply</span>
+      <span class="ticker-item"><span class="ticker-sep"></span>Testing yourself is 4× more effective than re-reading</span>
+      <span class="ticker-item"><span class="ticker-sep"></span>Short daily practice beats weekend cramming</span>
+      <span class="ticker-item"><span class="ticker-sep"></span>Used by families preparing for GL, CEM &amp; independent school exams</span>
+    </div>
+  </div>
+
+  <!-- ══════════════════════════════════════════════════
+       ABOUT
+  ══════════════════════════════════════════════════ -->
   <section class="section" id="about">
-    <h3>About</h3>
-    <p><strong>WordScout11Plus</strong> and <strong>SpellScout11Plus</strong> are fun, vibrant learning companions designed to <strong>boost your child’s confidence</strong> and performance in the 11+ exams. With colourful visuals, interactive quizzes, and thoughtfully chosen vocabulary, our books turn practice into play.</p>
+    <div class="section-eyebrow">Who we are</div>
+    <h3>About WordScout11Plus</h3>
+    <p>
+      <strong>WordScout11Plus</strong> and <strong>SpellScout11Plus</strong> are fun, vibrant
+      learning companions designed to <strong>boost your child's confidence</strong> and
+      performance in 11+ exams. With colourful visuals, interactive quizzes, and
+      thoughtfully chosen vocabulary, our books <em>turn practice into play</em>.
+    </p>
+
+    <div class="about-grid">
+      <div class="about-pill reveal reveal-d1">
+        <div class="about-pill-icon">📚</div>
+        <div>
+          <h4>Curriculum-aligned vocabulary</h4>
+          <p>Every word is carefully selected to match what actually appears in GL, CEM and independent school 11+ papers.</p>
+        </div>
+      </div>
+      <div class="about-pill reveal reveal-d2">
+        <div class="about-pill-icon">🎯</div>
+        <div>
+          <h4>Built for daily practice</h4>
+          <p>Short, focused sessions designed around the science of spaced repetition — 10 minutes a day beats 2 hours once a week.</p>
+        </div>
+      </div>
+      <div class="about-pill reveal reveal-d3">
+        <div class="about-pill-icon">🧠</div>
+        <div>
+          <h4>Active recall built in</h4>
+          <p>Quizzes, definitions, and example sentences are structured so children test themselves — the most effective study method there is.</p>
+        </div>
+      </div>
+      <div class="about-pill reveal reveal-d4">
+        <div class="about-pill-icon">🌈</div>
+        <div>
+          <h4>Fun and engaging design</h4>
+          <p>Colourful, approachable visuals that children actually want to open — not another dry workbook.</p>
+        </div>
+      </div>
+    </div>
   </section>
 
+  <!-- ══════════════════════════════════════════════════
+       QUIZ — UPGRADED
+  ══════════════════════════════════════════════════ -->
   <section class="section" id="quiz">
-    <h3>Daily Word Challenge</h3>
-    <p style="margin-bottom: 1.5rem;">Test your 11+ skills! Can you pick the correct answer?</p>
-    
-    <div class="quiz-container">
-        <div id="question-text" class="quiz-question">Loading Question...</div>
-        <div id="options-container" class="quiz-options">
-            </div>
-        <div id="feedback" class="quiz-feedback"></div>
-        <div class="score-board">Score: <span id="score">0</span></div>
-        <button id="next-btn" class="btn" style="margin-top: 1rem; display:none;" onclick="nextQuestion()">Next Question</button>
+    <div class="quiz-header">
+      <div class="section-eyebrow">Daily challenge</div>
+      <h3>Word &amp; Spelling Quiz</h3>
+      <p style="margin-bottom:1.25rem;">
+        <strong>Pick a category</strong> and test your 11+ knowledge — with a timer, streak counter, and fun facts after each answer!
+      </p>
+
+      <!-- Category buttons -->
+      <div class="category-row" id="category-row">
+        <button class="cat-btn selected" data-cat="all"     onclick="selectCat(this)">🎲 All categories</button>
+        <button class="cat-btn" data-cat="synonyms"  onclick="selectCat(this)">💬 Synonyms</button>
+        <button class="cat-btn" data-cat="antonyms"  onclick="selectCat(this)">🔄 Antonyms</button>
+        <button class="cat-btn" data-cat="spelling"  onclick="selectCat(this)">✏️ Spelling</button>
+        <button class="cat-btn" data-cat="meaning"   onclick="selectCat(this)">📖 Word meanings</button>
+        <button class="cat-btn" data-cat="similes"   onclick="selectCat(this)">🎨 Similes &amp; phrases</button>
+      </div>
+    </div>
+
+    <div class="quiz-arena" id="quiz-arena">
+      <!-- Progress bar -->
+      <div class="quiz-progress-bar">
+        <div class="quiz-progress-fill" id="quiz-progress" style="width:0%"></div>
+      </div>
+
+      <!-- Timer + streak + score row -->
+      <div class="timer-row">
+        <div class="timer-ring" id="timer-ring" aria-label="Time remaining">
+          <svg width="54" height="54" viewBox="0 0 54 54">
+            <circle cx="27" cy="27" r="22"/>
+            <circle class="timer-fill" id="timer-circle" cx="27" cy="27" r="22"/>
+          </svg>
+          <span class="timer-num" id="timer-num">15</span>
+        </div>
+
+        <div class="streak-badge">
+          <span class="streak-flame">🔥</span>
+          Streak: <span id="streak-count">0</span>
+        </div>
+
+        <div class="score-chip">
+          Score: <span id="score-display">0</span>
+        </div>
+      </div>
+
+      <!-- Category label + question -->
+      <div id="q-category" class="quiz-q-meta">Loading…</div>
+      <div id="question-text" class="quiz-question">Loading question…</div>
+
+      <!-- Options -->
+      <div class="quiz-options" id="options-container"></div>
+
+      <!-- Feedback + fact -->
+      <div id="feedback" class="quiz-feedback"></div>
+
+      <!-- Next button -->
+      <button id="next-btn" class="btn btn-teal" style="display:none;" onclick="nextQuestion()">
+        Next Question →
+      </button>
     </div>
   </section>
 
+  <!-- ══════════════════════════════════════════════════
+       BOOKS
+  ══════════════════════════════════════════════════ -->
   <section class="section" id="books">
-    <h3>Books</h3>
-    <div class="books-row" role="list">
-      <div class="book-card" role="listitem">
+    <div class="section-eyebrow">Our publications</div>
+    <h3>The Books</h3>
+    <p>Two companion volumes designed to work together — one to learn, one to practise.</p>
+
+    <div class="books-row">
+
+      <div class="book-card reveal reveal-d1">
+        <div class="section-eyebrow">Vocabulary</div>
         <h4>WordScout</h4>
-        <p>Compact, bright, and made for daily practice — carefully chosen words, definitions and example sentences.</p>
-        <a class="btn" href="https://www.amazon.co.uk/dp/B0DJ2WSP35" target="_blank">Buy WordScout</a>
+        <p>
+          Compact, bright, and made for daily practice —
+          <strong>carefully chosen 11+ words</strong> with clear definitions
+          and example sentences that show exactly how to use each one.
+          <em>Perfect for 10–15 minute daily sessions.</em>
+        </p>
+        <a class="btn btn-teal" href="https://www.amazon.co.uk/dp/B0DJ2WSP35" target="_blank">Buy WordScout on Amazon →</a>
       </div>
 
-      <div class="book-card" role="listitem">
+      <div class="book-card reveal reveal-d2">
+        <div class="section-eyebrow">Spelling</div>
         <h4>SpellScout</h4>
-        <p>A handy notebook companion to practise spelling, record tricky words and revisit progress.</p>
-        <a class="btn" href="https://www.amazon.co.uk/SpellScout-Notebook-Exam-Preparation-Words-Even/dp/B0FDVJ6FHZ" target="_blank">Buy SpellScout</a>
+        <p>
+          A handy notebook companion to <strong>practise spelling</strong>,
+          record tricky words, and revisit progress over time.
+          <em>The act of writing things down reinforces memory</em> —
+          this book puts that science to work.
+        </p>
+        <a class="btn btn-teal" href="https://www.amazon.co.uk/SpellScout-Notebook-Exam-Preparation-Words-Even/dp/B0FDVJ6FHZ" target="_blank">Buy SpellScout on Amazon →</a>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ══════════════════════════════════════════════════
+       YOUTUBE
+  ══════════════════════════════════════════════════ -->
+  <section class="section" id="youtube-section">
+    <div class="section-eyebrow">Watch &amp; learn</div>
+    <h3>WordScout on YouTube</h3>
+
+    <div class="youtube-layout">
+      <div class="youtube-text">
+        <p>
+          Learning is even better when you can <strong>see it in action</strong>.
+          Our YouTube channel features fun lessons, spelling challenges, and
+          exam tips — all designed to make preparation feel less like work
+          and more like play.
+        </p>
+        <p>
+          <em>Subscribe so you never miss a new word, trick, or challenge.</em>
+          New videos posted regularly in the run-up to exam season.
+        </p>
+        <a class="btn btn-yt" href="https://www.youtube.com/@wordscout11plus" target="_blank">
+          ▶ Subscribe on YouTube
+        </a>
+      </div>
+
+      <div>
+        <div class="video-wrapper">
+          <iframe
+            src="https://www.youtube.com/embed/LsUy6pLYRa0"
+            title="WordScout Video"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+            allowfullscreen>
+          </iframe>
+        </div>
       </div>
     </div>
   </section>
 
-  <section class="section" id="youtube-section">
-    <h3>Watch & Learn with WordScout!</h3>
-    <div class="youtube-layout">
-        <div class="youtube-text">
-            <p>Learning is even better when you can see it in action! Check out our <strong>WordScout YouTube channel</strong> for fun lessons, spelling challenges, and top tips for the 11+ exam.</p>
-            <p>Don't miss a single trick—subscribe to get notified when we post new videos.</p>
-            <br>
-            <a class="btn youtube-btn" href="https://www.youtube.com/@wordscout11plus" target="_blank">
-                Subscribe on YouTube
-            </a>
-        </div>
-        <div class="youtube-video">
-            <div class="video-wrapper">
-                <iframe 
-                    src="https://www.youtube.com/embed/LsUy6pLYRa0" 
-                    title="WordScout Video" 
-                    frameborder="0" 
-                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
-                    allowfullscreen>
-                </iframe>
-            </div>
-        </div>
+  <!-- ══════════════════════════════════════════════════
+       LEARN SCIENCE PAGES (merged from learning site)
+  ══════════════════════════════════════════════════ -->
+  <section class="section" id="learn-science">
+    <div class="section-eyebrow">Go deeper</div>
+    <h3>The Science of Learning</h3>
+    <p style="color:rgba(255,255,255,0.65); max-width:540px; margin-bottom:2rem;">
+      Knowing <em>how</em> your brain learns is just as important as what you study.
+      Explore our dedicated pages — packed with research, techniques, and resources
+      for students, parents, and teachers.
+    </p>
+
+    <div class="ls-grid">
+
+      <a href="funfacts.html" class="ls-card reveal reveal-d1">
+        <div class="ls-card-icon">💡</div>
+        <h4>Fun Facts</h4>
+        <p>Surprising brain science — did you know you forget half of what you learn within 24 hours?</p>
+        <span class="ls-card-link">Explore →</span>
+      </a>
+
+      <a href="explanation.html" class="ls-card reveal reveal-d2">
+        <div class="ls-card-icon">📖</div>
+        <h4>Explanation</h4>
+        <p>Four proven techniques — retrieval practice, spaced repetition, elaborative interrogation, and the Protégé Effect.</p>
+        <span class="ls-card-link">Read →</span>
+      </a>
+
+      <a href="glossary.html" class="ls-card reveal reveal-d3">
+        <div class="ls-card-icon">📋</div>
+        <h4>Glossary</h4>
+        <p>Every key learning science term explained in plain English — searchable and sourced.</p>
+        <span class="ls-card-link">Look up →</span>
+      </a>
+
+      <a href="resources.html" class="ls-card reveal reveal-d4">
+        <div class="ls-card-icon">🌐</div>
+        <h4>Resources</h4>
+        <p>Free websites and videos handpicked for students, parents, and teachers — filtered by audience.</p>
+        <span class="ls-card-link">Browse →</span>
+      </a>
+
     </div>
   </section>
 
+  <!-- ══════════════════════════════════════════════════
+       REVIEWS
+  ══════════════════════════════════════════════════ -->
   <section class="section" id="reviews">
+    <div class="section-eyebrow">What parents say</div>
     <h3>Reviews</h3>
-    <p><em>"If your child is preparing for the 11+, a strong and rich vocabulary is essential..."</em> – Silviu</p>
-    <p><em>"Great little book for children to record their new words..."</em> – Ellie</p>
-    <p><em>"An easy tool to record and learn new words..."</em> – Andrea</p>
+
+    <div class="reviews-grid">
+
+      <div class="review-card reveal reveal-d1">
+        <div class="review-stars">★★★★★</div>
+        <p class="review-text">
+          "If your child is preparing for the 11+, a <strong>strong and rich vocabulary is essential</strong>.
+          This book makes building it feel achievable and actually enjoyable."
+        </p>
+        <div class="review-author">— Silviu, Amazon reviewer</div>
+      </div>
+
+      <div class="review-card reveal reveal-d2">
+        <div class="review-stars">★★★★★</div>
+        <p class="review-text">
+          "Great little book for children to <strong>record their new words</strong>.
+          My daughter uses it alongside her school work and it's made a real difference."
+        </p>
+        <div class="review-author">— Ellie, Amazon reviewer</div>
+      </div>
+
+      <div class="review-card reveal reveal-d3">
+        <div class="review-stars">★★★★★</div>
+        <p class="review-text">
+          "<em>An easy tool to record and learn new words.</em>
+          The layout is clear and my son actually wants to pick it up — that says it all."
+        </p>
+        <div class="review-author">— Andrea, Amazon reviewer</div>
+      </div>
+
+    </div>
   </section>
 
+  <!-- ══════════════════════════════════════════════════
+       11+ SESSIONS
+  ══════════════════════════════════════════════════ -->
   <section class="section" id="sessions">
-    <h3>11+ Sessions – September 2025</h3>
-    <p>We are running <strong>special 11+ preparation sessions</strong> in September 2025. Join our WhatsApp group for details and updates:</p>
-    <p><a class="btn" href="https://chat.whatsapp.com/LXyHkp6e761ChwcSU8YhWP?mode=ems_copy_t" target="_blank">Join WhatsApp Group</a></p>
+    <div>
+      <div class="section-eyebrow">Limited spaces</div>
+      <h3>11+ Sessions — September 2025</h3>
+      <p>
+        We are running <strong>special 11+ preparation sessions</strong> in September 2025.
+        Join our WhatsApp group for dates, details, and everything you need to know.
+        <em>Spaces are limited — don't miss out.</em>
+      </p>
+    </div>
+    <a class="btn btn-wa" href="https://chat.whatsapp.com/LXyHkp6e761ChwcSU8YhWP?mode=ems_copy_t" target="_blank">
+      Join WhatsApp Group →
+    </a>
   </section>
 
+  <!-- ══════════════════════════════════════════════════
+       CONTACT
+  ══════════════════════════════════════════════════ -->
   <section class="section" id="contact">
+    <div class="section-eyebrow">Get in touch</div>
     <h3>Contact</h3>
-    <p>For enquiries, partnerships or feedback, email us:</p>
-    <p><a href="mailto:wordscout11plus@gmail.com" style="color:var(--blue); font-weight:700;">wordscout11plus@gmail.com</a></p>
+    <p>For enquiries, partnerships, or feedback — we'd love to hear from you.</p>
+    <a class="contact-email" href="mailto:wordscout11plus@gmail.com">
+      wordscout11plus@gmail.com
+    </a>
   </section>
 
+  <!-- FOOTER -->
   <footer>
-    <p>&copy; 2025 WordScout11Plus. All rights reserved.</p>
+    <p>© 2025 <strong>WordScout11Plus</strong>. All rights reserved. · By Patricia Andreev</p>
   </footer>
 
+  <!-- ══════════════════════════════════════════════════
+       QUIZ JAVASCRIPT — FULLY UPGRADED
+  ══════════════════════════════════════════════════ -->
   <script>
-    const questions = [
-        {
-            text: "Which word is a synonym for 'Elated'?",
-            options: ["Sad", "Overjoyed", "Bored", "Angry"],
-            correct: 1 // Index of correct answer
-        },
-        {
-            text: "Complete the Simile: As blind as a...",
-            options: ["Bat", "Cat", "Rat", "Hat"],
-            correct: 0
-        },
-        {
-            text: "Which word is an antonym for 'Brave'?",
-            options: ["Courageous", "Bold", "Cowardly", "Heroic"],
-            correct: 2
-        },
-        {
-            text: "Which word is spelled correctly?",
-            options: ["Neccessary", "Necessary", "Necesary", "Neccesary"],
-            correct: 1
-        },
-        {
-            text: "What does 'Fatigue' mean?",
-            options: ["Hunger", "Energy", "Tiredness", "Speed"],
-            correct: 2
-        }
-    ];
+  /* ─── QUESTION BANK ─────────────────────────────────
+     Each question has: text, category, options[],
+     correct (index), and fact (shown after answer).
+  ─────────────────────────────────────────────────── */
+  const ALL_QUESTIONS = [
+    // SYNONYMS
+    { cat:'synonyms', text:"Which word is a synonym for 'Elated'?",
+      options:["Sad","Overjoyed","Bored","Angry"], correct:1,
+      fact:"💡 'Elated' comes from the Latin 'elatus' — meaning lifted up. Synonyms include ecstatic, jubilant and exhilarated." },
+    { cat:'synonyms', text:"Which word is closest in meaning to 'Courageous'?",
+      options:["Timid","Reckless","Brave","Quiet"], correct:2,
+      fact:"💡 'Courageous' shares its root with the French word 'coeur' — meaning heart. To be courageous is to act from the heart." },
+    { cat:'synonyms', text:"Which is a synonym for 'Enormous'?",
+      options:["Tiny","Vast","Narrow","Plain"], correct:1,
+      fact:"💡 'Enormous' originally meant 'outside the norm' — from Latin 'enormis'. Synonyms: colossal, mammoth, immense." },
+    { cat:'synonyms', text:"Which word means the same as 'Jubilant'?",
+      options:["Miserable","Anxious","Thrilled","Calm"], correct:2,
+      fact:"💡 'Jubilant' comes from 'jubilate' — to shout for joy. It's a great 11+ word to use in creative writing." },
+    { cat:'synonyms', text:"Choose the synonym for 'Peculiar':",
+      options:["Ordinary","Strange","Loud","Gentle"], correct:1,
+      fact:"💡 'Peculiar' once meant 'belonging to oneself' — now it means unusual or strange. A great word to use instead of 'weird'." },
 
-    let currentQuestion = 0;
-    let score = 0;
+    // ANTONYMS
+    { cat:'antonyms', text:"Which word is an antonym for 'Brave'?",
+      options:["Courageous","Bold","Cowardly","Heroic"], correct:2,
+      fact:"💡 'Cowardly' is the opposite of brave. Other antonyms include timid, fearful, and faint-hearted." },
+    { cat:'antonyms', text:"What is the antonym of 'Ancient'?",
+      options:["Old","Modern","Antique","Faded"], correct:1,
+      fact:"💡 'Ancient' refers to very old things — especially from classical history. Its antonym 'modern' means contemporary or new." },
+    { cat:'antonyms', text:"Which word is the opposite of 'Generous'?",
+      options:["Kind","Selfless","Miserly","Cheerful"], correct:2,
+      fact:"💡 'Miserly' means extremely stingy — think Scrooge from A Christmas Carol! A perfect 11+ literary reference." },
+    { cat:'antonyms', text:"The antonym of 'Transparent' is:",
+      options:["Clear","Opaque","Visible","Bright"], correct:1,
+      fact:"💡 'Opaque' means you cannot see through something. It can also be used metaphorically — 'his explanation was opaque' means confusing." },
+    { cat:'antonyms', text:"What is the opposite of 'Reluctant'?",
+      options:["Unwilling","Hesitant","Eager","Slow"], correct:2,
+      fact:"💡 'Reluctant' means unwilling or hesitant. Its antonym 'eager' shows enthusiasm — both are excellent 11+ vocabulary words." },
 
-    function loadQuestion() {
-        const q = questions[currentQuestion];
-        document.getElementById('question-text').innerText = q.text;
-        document.getElementById('feedback').innerText = "";
-        document.getElementById('next-btn').style.display = "none";
-        
-        const container = document.getElementById('options-container');
-        container.innerHTML = ''; // Clear previous options
+    // SPELLING
+    { cat:'spelling', text:"Which word is spelled correctly?",
+      options:["Neccessary","Necessary","Necesary","Neccesary"], correct:1,
+      fact:"✏️ Memory trick: 'Necessary' has one Collar and two Socks — 1 C and 2 S's." },
+    { cat:'spelling', text:"Which spelling is correct?",
+      options:["Accomodation","Accommodation","Acomodation","Acommodation"], correct:1,
+      fact:"✏️ 'Accommodation' has a Double C and a Double M. Think: Accommodation is big enough to fit two C's and two M's!" },
+    { cat:'spelling', text:"Spot the correctly spelled word:",
+      options:["Recieve","Beleive","Achieve","Peice"], correct:2,
+      fact:"✏️ The rule: 'I before E except after C' — but 'achieve' follows it perfectly. 'Receive' is the tricky one after C." },
+    { cat:'spelling', text:"Which is spelled correctly?",
+      options:["Embarassment","Embarrassment","Embarrasment","Embarrasement"], correct:1,
+      fact:"✏️ 'Embarrassment' has a Double R and a Double S. Think: you get Really Red and Sweaty when embarrassed!" },
+    { cat:'spelling', text:"Which word is spelled correctly?",
+      options:["Conscous","Concious","Consious","Conscious"], correct:3,
+      fact:"✏️ 'Conscious' contains the word 'sci' — think: conscious = using your SCIENCE mind to be aware!" },
+    { cat:'spelling', text:"Find the correct spelling:",
+      options:["Priviledge","Privilige","Privilege","Previlege"], correct:2,
+      fact:"✏️ 'Privilege' trips up lots of students. Remember: PRIV-I-LEGE. No D in the middle!" },
 
-        q.options.forEach((option, index) => {
-            const btn = document.createElement('button');
-            btn.className = 'quiz-btn';
-            btn.innerText = option;
-            btn.onclick = () => checkAnswer(index, btn);
-            container.appendChild(btn);
-        });
-    }
+    // MEANING
+    { cat:'meaning', text:"What does 'Fatigue' mean?",
+      options:["Hunger","Energy","Tiredness","Speed"], correct:2,
+      fact:"📖 'Fatigue' comes from French and means extreme tiredness. You might see it in 11+ comprehension passages about sport or war." },
+    { cat:'meaning', text:"What does 'Melancholy' mean?",
+      options:["Joyful","A deep sadness","Anger","Confusion"], correct:1,
+      fact:"📖 'Melancholy' comes from Greek — 'melas' (black) + 'khole' (bile). Ancient Greeks thought sadness came from black bile. A wonderful word for creative writing." },
+    { cat:'meaning', text:"What does 'Eloquent' mean?",
+      options:["Clumsy","Silent","Fluent and persuasive","Forgetful"], correct:2,
+      fact:"📖 An 'eloquent' speaker expresses ideas clearly and beautifully. You might describe a character's speech as eloquent in a 11+ story." },
+    { cat:'meaning', text:"What does 'Persevere' mean?",
+      options:["Give up","Continue despite difficulty","Run quickly","Ask for help"], correct:1,
+      fact:"📖 'Persevere' means to keep going despite obstacles. It shares a root with 'severe' — meaning the difficulty is serious but you push on anyway." },
+    { cat:'meaning', text:"What does 'Inquisitive' mean?",
+      options:["Lazy","Shy","Curious and questioning","Angry"], correct:2,
+      fact:"📖 'Inquisitive' shares a root with 'inquisition' — both involve asking questions and searching for answers. A very positive trait in a 11+ character description!" },
+    { cat:'meaning', text:"What does 'Tenacious' mean?",
+      options:["Weak","Holding firmly to something; determined","Generous","Confused"], correct:1,
+      fact:"📖 'Tenacious' comes from the Latin 'tenere' — to hold. A tenacious student keeps going even when things get hard. Sound familiar?" },
 
-    function checkAnswer(selectedIndex, btnElement) {
-        // Disable all buttons to prevent multiple clicks
-        const allBtns = document.querySelectorAll('.quiz-btn');
-        allBtns.forEach(btn => btn.disabled = true);
+    // SIMILES & PHRASES
+    { cat:'similes', text:"Complete the simile: As blind as a...",
+      options:["Bat","Cat","Rat","Hat"], correct:0,
+      fact:"🎨 'As blind as a bat' — though actually bats aren't blind! They use echolocation. A great example of a simile that isn't scientifically accurate." },
+    { cat:'similes', text:"Complete the phrase: 'Actions speak louder than...'",
+      options:["Thoughts","Silence","Words","Sounds"], correct:2,
+      fact:"🎨 This proverb means what you do matters more than what you say. Using proverbs in 11+ writing shows impressive vocabulary." },
+    { cat:'similes', text:"Complete the simile: As cold as...",
+      options:["Snow","Ice","The Arctic","A fridge"], correct:1,
+      fact:"🎨 'As cold as ice' is a classic simile. In 11+ creative writing, try creating your own original simile — examiners love fresh comparisons!" },
+    { cat:'similes', text:"'The classroom was a zoo.' This is an example of a...",
+      options:["Simile","Metaphor","Alliteration","Onomatopoeia"], correct:1,
+      fact:"🎨 A metaphor says something IS something else. A simile uses 'like' or 'as'. Remember: simile = like/as, metaphor = direct comparison." },
+    { cat:'similes', text:"Complete: 'Every cloud has a...'",
+      options:["Dark lining","Silver lining","Golden edge","Bright side"], correct:1,
+      fact:"🎨 'Every cloud has a silver lining' means there's something positive in every bad situation. The phrase comes from a John Milton poem from 1634!" },
+  ];
 
-        const correctIndex = questions[currentQuestion].correct;
+  /* ─── QUIZ STATE ─────────────────────────────────── */
+  let activeCat     = 'all';
+  let pool          = [];
+  let currentIndex  = 0;
+  let score         = 0;
+  let streak        = 0;
+  let bestStreak    = 0;
+  let answered      = false;
+  let timerInterval = null;
+  let timeLeft      = 15;
+  const TIME_LIMIT  = 15;
+  const TIMER_CIRC  = 138; // 2 * PI * r(22)
 
-        if (selectedIndex === correctIndex) {
-            btnElement.classList.add('correct');
-            document.getElementById('feedback').innerText = "🎉 Correct! Well done!";
-            document.getElementById('feedback').style.color = "var(--green)";
-            score++;
-            document.getElementById('score').innerText = score;
-        } else {
-            btnElement.classList.add('wrong');
-            // Highlight the correct one
-            allBtns[correctIndex].classList.add('correct');
-            document.getElementById('feedback').innerText = "Oops! Keep trying!";
-            document.getElementById('feedback').style.color = "var(--red)";
-        }
-        
-        document.getElementById('next-btn').style.display = "inline-block";
-    }
+  /* ─── CATEGORY SELECTOR ──────────────────────────── */
+  function selectCat(btn) {
+    document.querySelectorAll('.cat-btn').forEach(b => b.classList.remove('selected'));
+    btn.classList.add('selected');
+    activeCat = btn.dataset.cat;
+    startQuiz();
+  }
 
-    function nextQuestion() {
-        currentQuestion++;
-        if (currentQuestion >= questions.length) {
-            // End of quiz
-            document.getElementById('question-text').innerText = "Quiz Complete!";
-            document.getElementById('options-container').innerHTML = `
-                <div style="grid-column: span 2; font-size: 1.2rem;">
-                    You scored <strong>${score}</strong> out of <strong>${questions.length}</strong>! 🌟
-                </div>`;
-            document.getElementById('feedback').innerText = "";
-            document.getElementById('next-btn').innerText = "Play Again";
-            document.getElementById('next-btn').onclick = resetQuiz;
-        } else {
-            loadQuestion();
-        }
-    }
+  /* ─── START / RESTART ────────────────────────────── */
+  function startQuiz() {
+    // Build pool
+    pool = activeCat === 'all'
+      ? shuffle([...ALL_QUESTIONS])
+      : shuffle(ALL_QUESTIONS.filter(q => q.cat === activeCat));
 
-    function resetQuiz() {
-        currentQuestion = 0;
-        score = 0;
-        document.getElementById('score').innerText = "0";
-        document.getElementById('next-btn').innerText = "Next Question";
-        loadQuestion();
-    }
+    currentIndex = 0;
+    score        = 0;
+    streak       = 0;
+    bestStreak   = 0;
 
-    // Initialize first question
+    updateScore();
+    updateStreak();
+    showArena();
     loadQuestion();
+  }
+
+  function showArena() {
+    document.getElementById('quiz-arena').innerHTML = `
+      <div class="quiz-progress-bar">
+        <div class="quiz-progress-fill" id="quiz-progress" style="width:0%"></div>
+      </div>
+      <div class="timer-row">
+        <div class="timer-ring" id="timer-ring" aria-label="Time remaining">
+          <svg width="54" height="54" viewBox="0 0 54 54">
+            <circle cx="27" cy="27" r="22"/>
+            <circle class="timer-fill" id="timer-circle" cx="27" cy="27" r="22"/>
+          </svg>
+          <span class="timer-num" id="timer-num">15</span>
+        </div>
+        <div class="streak-badge">
+          <span class="streak-flame">🔥</span>
+          Streak: <span id="streak-count">0</span>
+        </div>
+        <div class="score-chip">Score: <span id="score-display">0</span></div>
+      </div>
+      <div id="q-category" class="quiz-q-meta"></div>
+      <div id="question-text" class="quiz-question"></div>
+      <div class="quiz-options" id="options-container"></div>
+      <div id="feedback" class="quiz-feedback"></div>
+      <button id="next-btn" class="btn btn-teal" style="display:none;" onclick="nextQuestion()">Next Question →</button>
+    `;
+  }
+
+  /* ─── LOAD QUESTION ──────────────────────────────── */
+  function loadQuestion() {
+    if (currentIndex >= pool.length) { showEndScreen(); return; }
+
+    answered = false;
+    const q = pool[currentIndex];
+    const progress = (currentIndex / pool.length) * 100;
+
+    document.getElementById('quiz-progress').style.width = progress + '%';
+    document.getElementById('q-category').textContent = catLabel(q.cat);
+    document.getElementById('question-text').textContent = q.text;
+    document.getElementById('feedback').className = 'quiz-feedback';
+    document.getElementById('feedback').innerHTML = '';
+    document.getElementById('next-btn').style.display = 'none';
+
+    const letters = ['A','B','C','D'];
+    const container = document.getElementById('options-container');
+    container.innerHTML = '';
+    q.options.forEach((opt, i) => {
+      const btn = document.createElement('button');
+      btn.className = 'quiz-opt';
+      btn.innerHTML = `<span class="quiz-opt-letter">${letters[i]}</span>${opt}`;
+      btn.onclick = () => checkAnswer(i, btn, q);
+      container.appendChild(btn);
+    });
+
+    startTimer();
+  }
+
+  /* ─── TIMER ──────────────────────────────────────── */
+  function startTimer() {
+    clearInterval(timerInterval);
+    timeLeft = TIME_LIMIT;
+    updateTimerUI();
+
+    timerInterval = setInterval(() => {
+      timeLeft--;
+      updateTimerUI();
+      if (timeLeft <= 0) {
+        clearInterval(timerInterval);
+        timeOut();
+      }
+    }, 1000);
+  }
+
+  function updateTimerUI() {
+    const numEl  = document.getElementById('timer-num');
+    const fillEl = document.getElementById('timer-circle');
+    if (!numEl || !fillEl) return;
+
+    numEl.textContent = timeLeft;
+    const offset = TIMER_CIRC * (1 - timeLeft / TIME_LIMIT);
+    fillEl.style.strokeDashoffset = offset;
+
+    fillEl.classList.toggle('urgent', timeLeft <= 5);
+    numEl.style.color = timeLeft <= 5 ? 'var(--red)' : 'var(--ink)';
+  }
+
+  function timeOut() {
+    if (answered) return;
+    answered = true;
+    streak = 0;
+    updateStreak();
+
+    const q = pool[currentIndex];
+    disableOptions();
+    highlightCorrect(q.correct);
+
+    const fb = document.getElementById('feedback');
+    fb.className = 'quiz-feedback wrong-fb';
+    fb.innerHTML = '⏰ Time\'s up! Don\'t worry — keep going.';
+
+    setTimeout(() => showFact(q), 1200);
+    document.getElementById('next-btn').style.display = 'block';
+  }
+
+  /* ─── CHECK ANSWER ───────────────────────────────── */
+  function checkAnswer(index, btn, q) {
+    if (answered) return;
+    answered = true;
+    clearInterval(timerInterval);
+
+    disableOptions();
+
+    const fb = document.getElementById('feedback');
+
+    if (index === q.correct) {
+      btn.classList.add('correct');
+      btn.classList.add('pop');
+      score++;
+      streak++;
+      if (streak > bestStreak) bestStreak = streak;
+      updateScore();
+      updateStreak();
+      fb.className = 'quiz-feedback correct-fb';
+      fb.innerHTML = streak >= 3
+        ? `🔥 ${streak} in a row! Brilliant!`
+        : '✅ Correct! Well done!';
+    } else {
+      btn.classList.add('wrong');
+      streak = 0;
+      updateStreak();
+      highlightCorrect(q.correct);
+      fb.className = 'quiz-feedback wrong-fb';
+      fb.innerHTML = '❌ Not quite — the correct answer is highlighted.';
+    }
+
+    setTimeout(() => showFact(q), 1000);
+    document.getElementById('next-btn').style.display = 'block';
+  }
+
+  function showFact(q) {
+    const fb = document.getElementById('feedback');
+    const factEl = document.createElement('div');
+    factEl.className = 'quiz-feedback fact-fb';
+    factEl.style.marginTop = '8px';
+    factEl.textContent = q.fact;
+    fb.after(factEl);
+  }
+
+  function disableOptions() {
+    document.querySelectorAll('.quiz-opt').forEach(b => b.disabled = true);
+  }
+
+  function highlightCorrect(idx) {
+    document.querySelectorAll('.quiz-opt')[idx].classList.add('correct');
+  }
+
+  /* ─── NEXT QUESTION ──────────────────────────────── */
+  function nextQuestion() {
+    // Remove fact element if present
+    const factEl = document.querySelector('.fact-fb');
+    if (factEl) factEl.remove();
+
+    currentIndex++;
+    loadQuestion();
+  }
+
+  /* ─── END SCREEN ─────────────────────────────────── */
+  function showEndScreen() {
+    clearInterval(timerInterval);
+    const total = pool.length;
+    const pct   = Math.round((score / total) * 100);
+
+    let emoji = pct >= 90 ? '🏆' : pct >= 70 ? '🌟' : pct >= 50 ? '👍' : '💪';
+    let msg   = pct >= 90 ? 'Outstanding — exam ready!'
+              : pct >= 70 ? 'Great work — nearly there!'
+              : pct >= 50 ? 'Good effort — keep practising!'
+              : 'Keep going — every question teaches you something!';
+
+    document.getElementById('quiz-arena').innerHTML = `
+      <div class="quiz-end">
+        <div class="quiz-end-score">${emoji}</div>
+        <div class="quiz-end-score" style="font-size:3rem">${score}/${total}</div>
+        <div class="quiz-end-label">${msg}</div>
+        <div class="quiz-end-badges">
+          <span class="end-badge">Score: ${pct}%</span>
+          <span class="end-badge">🔥 Best streak: ${bestStreak}</span>
+          <span class="end-badge">Category: ${activeCat === 'all' ? 'All' : catLabel(activeCat)}</span>
+        </div>
+        <div style="display:flex; gap:12px; justify-content:center; flex-wrap:wrap;">
+          <button class="btn btn-teal" onclick="startQuiz()">Play Again →</button>
+          <button class="btn btn-ink" onclick="document.getElementById('books').scrollIntoView({behavior:'smooth'})">See the Books →</button>
+        </div>
+      </div>
+    `;
+  }
+
+  /* ─── HELPERS ────────────────────────────────────── */
+  function updateScore() {
+    const el = document.getElementById('score-display');
+    if (el) el.textContent = score;
+  }
+
+  function updateStreak() {
+    const el = document.getElementById('streak-count');
+    if (el) el.textContent = streak;
+  }
+
+  function catLabel(cat) {
+    const map = {
+      synonyms:'💬 Synonyms', antonyms:'🔄 Antonyms',
+      spelling:'✏️ Spelling', meaning:'📖 Word meanings',
+      similes:'🎨 Similes & phrases', all:'🎲 All categories'
+    };
+    return map[cat] || cat;
+  }
+
+  function shuffle(arr) {
+    for (let i = arr.length - 1; i > 0; i--) {
+      const j = Math.floor(Math.random() * (i + 1));
+      [arr[i], arr[j]] = [arr[j], arr[i]];
+    }
+    return arr;
+  }
+
+  // Start quiz on load
+  startQuiz();
+
+  /* ─── SCROLL REVEAL ──────────────────────────────── */
+  const revealObs = new IntersectionObserver(entries => {
+    entries.forEach(e => {
+      if (e.isIntersecting) {
+        e.target.classList.add('visible');
+        revealObs.unobserve(e.target);
+      }
+    });
+  }, { threshold: 0.1 });
+
+  document.querySelectorAll('.reveal').forEach(el => revealObs.observe(el));
   </script>
+
 </body>
 </html>
