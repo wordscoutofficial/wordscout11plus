@@ -1,164 +1,261 @@
 <!DOCTYPE html>
 <html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="The science of learning — what actually works and why. By WordScout11Plus.">
+  <title>Learn Science – WordScout11Plus</title>
+  <link rel="icon" href="favicon.ico" type="image/x-icon">
+  <link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@400;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="wordscout.css">
+  <link rel="stylesheet" href="overview.css">
+</head>
+<body>
 
-  <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Learn about the science of effective studying — active recall, spaced repetition, and more. By Patricia Andreev for WordScout11Plus.">
-    <title>Home – WordScout11Plus</title>
-    <link rel="stylesheet" href="styles.css" />
-    <link rel="icon" href="favicon.ico" type="image/x-icon" />
-    <script src="script.js" defer></script>
-    <link href="https://fonts.googleapis.com/css2?family=Baloo+2&display=swap" rel="stylesheet">
-  </head>
-
-  <body>
-
-    <header>
-      <div class="brand">
-        <h3>WordScout11Plus</h3>
-        <a href="https://www.wordscout11plus.com/" target="_blank">Back to full website</a>
-      </div>
-
-      <!-- Hero with background image at 70% opacity -->
-      <div class="hero">
-        <!-- The image sits behind the text using a pseudo-element in CSS.
-             Replace "your-hero-image.jpg" with your actual image filename. -->
-        <div class="hero-bg" style="background-image: url('your-hero-image.jpg');"></div>
-        <div class="hero-text">
-          <h1>What's the best way to learn? Simplified.</h1>
-          <p>Explained by Patricia Andreev</p>
-        </div>
-      </div>
-    </header>
-
-    <nav class="nav-bar" aria-label="Main navigation">
-      <a href="overview.html">Overview</a>
-      <a href="funfacts.html">Fun Facts</a>
-      <a href="explanation.html">Explanation</a>
-      <a href="glossary.html">Glossary</a>
-      <a href="resources.html">Resources</a>
+  <!-- ── HEADER (matches main site exactly) ── -->
+  <header>
+    <div class="brand">
+      <div class="brand-logo">W</div>
+      <h1>WordScout11Plus</h1>
+    </div>
+    <nav aria-label="Main navigation">
+      <a href="index.html">Home</a>
+      <a href="index.html#books">Books</a>
+      <a href="index.html#quiz" class="nav-highlight">Play Quiz!</a>
+      <a href="index.html#youtube-section">Videos</a>
+      <a href="overview.html" class="active">Learn Science</a>
+      <a href="index.html#reviews">Reviews</a>
+      <a href="index.html#contact">Contact</a>
     </nav>
+  </header>
 
-    <section class="main-layout">
+  <!-- ── SUB-NAV (science pages) ── -->
+  <div class="sci-subnav">
+    <a href="overview.html" class="sci-subnav-link active">Overview</a>
+    <a href="funfacts.html" class="sci-subnav-link">Fun Facts</a>
+    <a href="explanation.html" class="sci-subnav-link">Explanation</a>
+    <a href="glossary.html" class="sci-subnav-link">Glossary</a>
+    <a href="resources.html" class="sci-subnav-link">Resources</a>
+  </div>
 
-      <div class="left box">
-        <h2>Overview</h2>
-
-        <p><strong>There is no single perfect way to learn.</strong></p>
-        <p>What matters is how your brain takes in, stores, and uses information.</p>
-
-        <p><strong>Be active</strong><br>
-          Test yourself and explain ideas out loud. Psychologists call this
-          <em>retrieval practice</em> — studies show it produces stronger
-          long-term memory than re-reading.
-          <a href="https://www.learningscientists.org/retrieval-practice" target="_blank">Learn more ↗</a>
+  <!-- ── HERO ── -->
+  <div class="ov-hero">
+    <div class="ov-hero-inner">
+      <div class="ov-hero-text">
+        <div class="ov-eyebrow">🧠 The science of learning</div>
+        <h1 class="ov-title">
+          Stop studying harder.<br>
+          Start studying <span class="ov-title-accent">smarter.</span>
+        </h1>
+        <p class="ov-subtitle">
+          Most students spend hours using methods that science proved are
+          <strong>nearly useless</strong> — decades ago.
+          This section shows you what <em>actually works</em>, why it works,
+          and exactly how to use it.
         </p>
-
-        <p><strong>Give it time</strong><br>
-          Short sessions spread across days work best. This is known as
-          <em>spaced repetition</em> — first studied by Hermann Ebbinghaus in 1885
-          and backed by decades of research since.
-          <a href="https://www.learningscientists.org/spaced-practice" target="_blank">Learn more ↗</a>
-        </p>
-
-        <p><strong>Make connections</strong><br>
-          Link new ideas to what you already know by asking yourself "why does this make sense?"
-          Psychologists call this <em>elaborative interrogation</em>.
-          <a href="https://www.learningscientists.org/elaborative-interrogation" target="_blank">Learn more ↗</a>
-        </p>
-
-        <p><strong>Teach it out loud</strong><br>
-          Explaining a topic to someone else — or even to yourself — forces you to
-          organise your thinking and spot gaps. This is known as the <em>Protégé Effect</em>.
-          <a href="https://www.scientificamerican.com/article/learning-by-teaching-others/" target="_blank">Learn more ↗</a>
-        </p>
-      </div>
-
-      <div class="right">
-        <div class="box media-box">
-          <img
-            src="brains.jpg"
-            alt="Illustration of a brain with connections representing memory and learning"
-            width="500"
-            height="220"
-          >
-        </div>
-        <div class="box small-box">
-          <p><strong>The aim:</strong> remember and use what you learn.</p>
+        <div class="ov-hero-ctas">
+          <a class="btn btn-white" href="explanation.html">See the techniques →</a>
+          <a class="btn btn-ghost" href="funfacts.html">Surprising facts</a>
         </div>
       </div>
 
-    </section>
-
-    <!-- SITE SUMMARY SECTION -->
-    <section class="summary-strip">
-      <p class="summary-strip-eyebrow">What's on this site</p>
-      <h2>Everything you need, all in one place</h2>
-      <p class="summary-strip-sub">
-        This site walks you through <strong>the science of learning</strong> —
-        from surprising facts to practical techniques to a full glossary of terms.
-        Here's what each page covers:
-      </p>
-
-      <div class="summary-cards">
-
-        <a href="funfacts.html" class="summary-card summary-card--facts">
-          <div class="summary-card-icon">&#128161;</div>
-          <h3>Fun Facts</h3>
-          <p>
-            <em>Did you know you forget half of what you learn within 24 hours?</em>
-            The Fun Facts page is packed with <strong>surprising, research-backed discoveries</strong>
-            about how your brain really works — filtered by Memory, Sleep, Brain, and Habits.
-          </p>
-          <span class="summary-card-link">Explore fun facts ↗</span>
-        </a>
-
-        <a href="explanation.html" class="summary-card summary-card--explanation">
-          <div class="summary-card-icon">&#128214;</div>
-          <h3>Explanation</h3>
-          <p>
-            A <strong>deep dive into four proven learning techniques</strong> — retrieval practice,
-            spaced repetition, elaborative interrogation, and the Protégé Effect.
-            <em>Each one explained clearly, with a "try it now" exercise.</em>
-          </p>
-          <span class="summary-card-link">Read the explanation ↗</span>
-        </a>
-
-        <a href="glossary.html" class="summary-card summary-card--glossary">
-          <div class="summary-card-icon">&#128220;</div>
-          <h3>Glossary</h3>
-          <p>
-            A <strong>searchable reference of every key term</strong> used across this site —
-            from active recall to working memory. <em>Plain English, no jargon,</em>
-            with sources for every definition.
-          </p>
-          <span class="summary-card-link">Browse the glossary ↗</span>
-        </a>
-
-        <a href="resources.html" class="summary-card summary-card--resources">
-          <div class="summary-card-icon">&#127760;</div>
-          <h3>Resources</h3>
-          <p>
-            <strong>Handpicked websites, articles, and videos</strong> for students, parents,
-            and teachers. <em>Everything is free to access</em> — filtered by audience so you
-            find what's relevant to you quickly.
-          </p>
-          <span class="summary-card-link">Find resources ↗</span>
-        </a>
-
+      <div class="ov-hero-stats">
+        <div class="ov-stat">
+          <div class="ov-stat-num">50%</div>
+          <div class="ov-stat-label">of today's learning<br>gone by tomorrow</div>
+        </div>
+        <div class="ov-stat">
+          <div class="ov-stat-num">4×</div>
+          <div class="ov-stat-label">better results from<br>testing vs re-reading</div>
+        </div>
+        <div class="ov-stat">
+          <div class="ov-stat-num">1885</div>
+          <div class="ov-stat-label">when Ebbinghaus proved<br>the forgetting curve</div>
+        </div>
       </div>
-    </section>
+    </div>
+  </div>
 
-    <section class="section" id="sessions">
-      <h3>11+ Sessions – September 2025</h3>
-      <p>We are running <strong>special 11+ preparation sessions</strong> in September 2025. Join our WhatsApp group for details and updates:</p>
-      <p><a class="btn" href="https://chat.whatsapp.com/LXyHkp6e761ChwcSU8YhWP?mode=ems_copy_t" target="_blank">Join WhatsApp Group</a></p>
-    </section>
+  <!-- ── TICKER ── -->
+  <div class="ticker-strip" aria-hidden="true">
+    <div class="ticker-track">
+      <span class="ticker-item"><span class="ticker-sep"></span>Re-reading is one of the least effective study methods</span>
+      <span class="ticker-item"><span class="ticker-sep"></span>Sleep is when your brain saves the day's learning</span>
+      <span class="ticker-item"><span class="ticker-sep"></span>Short daily sessions beat a single long cram — every time</span>
+      <span class="ticker-item"><span class="ticker-sep"></span>Teaching someone else forces you to truly understand it</span>
+      <span class="ticker-item"><span class="ticker-sep"></span>Struggling to remember is actually strengthening the memory</span>
+      <span class="ticker-item"><span class="ticker-sep"></span>Re-reading is one of the least effective study methods</span>
+      <span class="ticker-item"><span class="ticker-sep"></span>Sleep is when your brain saves the day's learning</span>
+      <span class="ticker-item"><span class="ticker-sep"></span>Short daily sessions beat a single long cram — every time</span>
+      <span class="ticker-item"><span class="ticker-sep"></span>Teaching someone else forces you to truly understand it</span>
+      <span class="ticker-item"><span class="ticker-sep"></span>Struggling to remember is actually strengthening the memory</span>
+    </div>
+  </div>
 
-    <footer>
-      <p>© 2026 WordScout11Plus. All rights reserved.</p>
-    </footer>
+  <!-- ── OVERVIEW INTRO ── -->
+  <section class="ov-intro">
+    <div class="ov-intro-inner">
+      <div class="ov-intro-text">
+        <div class="ov-section-label">The basics</div>
+        <h2>There is no single perfect way to learn.</h2>
+        <p>
+          <strong>But there are approaches that are dramatically better than others.</strong>
+          What matters is how your brain takes in, stores, and retrieves information —
+          and the good news is that <em>the science is clear</em>.
+        </p>
+        <p>
+          The four techniques on this site are not opinions or tips from a blog.
+          They are strategies with <strong>decades of peer-reviewed research</strong>
+          behind them. Used together, they can transform how much a student retains —
+          without needing to study for longer.
+        </p>
+      </div>
+      <div class="ov-intro-pull">
+        <div class="ov-pull-quote">
+          "The best students don't study more — they study <em>differently</em>."
+        </div>
+        <div class="ov-pull-attr">Cognitive science research consensus</div>
+      </div>
+    </div>
+  </section>
 
-  </body>
+  <!-- ── FOUR TECHNIQUES ── -->
+  <section class="ov-techniques">
+    <div class="ov-section-label" style="text-align:center; margin-bottom:0.5rem;">Four proven techniques</div>
+    <h2 class="ov-techniques-title">What actually works — and why</h2>
+    <p class="ov-techniques-sub">
+      Click any technique to read the full explanation, with research sources and a "try it now" exercise.
+    </p>
+
+    <div class="ov-tech-grid">
+
+      <a href="explanation.html#retrieval" class="ov-tech-card ov-tech--retrieval">
+        <div class="ov-tech-num">01</div>
+        <div class="ov-tech-icon">🔁</div>
+        <h3>Retrieval practice</h3>
+        <p>
+          <strong>Close your notes and try to recall what you just learned.</strong>
+          The act of retrieving a memory — even struggling to find it —
+          <em>doubles how long it lasts</em> compared to re-reading the same material.
+        </p>
+        <div class="ov-tech-stat">4× more effective than re-reading</div>
+        <div class="ov-tech-cta">Read the full technique →</div>
+      </a>
+
+      <a href="explanation.html#spaced" class="ov-tech-card ov-tech--spaced">
+        <div class="ov-tech-num">02</div>
+        <div class="ov-tech-icon">📅</div>
+        <h3>Spaced repetition</h3>
+        <p>
+          <strong>Study a little, then wait. Come back before you forget.</strong>
+          Each gap makes the memory bounce back stronger.
+          <em>Four 30-minute sessions beats one 2-hour session</em> — with the same material.
+        </p>
+        <div class="ov-tech-stat">Proven since Ebbinghaus, 1885</div>
+        <div class="ov-tech-cta">Read the full technique →</div>
+      </a>
+
+      <a href="explanation.html#elaborative" class="ov-tech-card ov-tech--elaborative">
+        <div class="ov-tech-num">03</div>
+        <div class="ov-tech-icon">💭</div>
+        <h3>Elaborative interrogation</h3>
+        <p>
+          Ask <strong>"why is this true?"</strong> after every fact you read.
+          <em>Connecting new ideas to what you already know</em> builds a web your brain
+          can actually navigate — isolated facts are slippery.
+        </p>
+        <div class="ov-tech-stat">Significantly boosts long-term recall</div>
+        <div class="ov-tech-cta">Read the full technique →</div>
+      </a>
+
+      <a href="explanation.html#protege" class="ov-tech-card ov-tech--protege">
+        <div class="ov-tech-num">04</div>
+        <div class="ov-tech-icon">🗣️</div>
+        <h3>The Protégé Effect</h3>
+        <p>
+          <strong>Explain the topic out loud</strong> — to a friend, a wall, a pet.
+          <em>If you can't explain it clearly, you don't truly know it yet.</em>
+          Teaching reveals every gap, instantly.
+        </p>
+        <div class="ov-tech-stat">Documented by Nestojko et al., 2014</div>
+        <div class="ov-tech-cta">Read the full technique →</div>
+      </a>
+
+    </div>
+  </section>
+
+  <!-- ── EXPLORE THE SITE ── -->
+  <section class="ov-explore">
+    <div class="ov-section-label">Explore</div>
+    <h2>Every page on the learning science site</h2>
+    <p class="ov-explore-sub">
+      Each page goes deeper into a different part of the science.
+      They work well read in order — or dip in wherever your curiosity takes you.
+    </p>
+
+    <div class="ov-explore-grid">
+
+      <a href="funfacts.html" class="ov-explore-card ov-explore--facts">
+        <div class="ov-explore-icon">💡</div>
+        <h3>Fun Facts</h3>
+        <p>
+          <em>Did you know you forget half of what you learn within 24 hours?</em>
+          Surprising, research-backed brain science — <strong>filterable by Memory, Sleep, Brain, and Habits.</strong>
+        </p>
+        <span class="ov-explore-link">Explore fun facts →</span>
+      </a>
+
+      <a href="explanation.html" class="ov-explore-card ov-explore--explanation">
+        <div class="ov-explore-icon">📖</div>
+        <h3>Explanation</h3>
+        <p>
+          A deep, <em>engaging walkthrough</em> of all four techniques —
+          <strong>with research citations and a "try it now" challenge</strong> at the end of each one.
+        </p>
+        <span class="ov-explore-link">Read the explanation →</span>
+      </a>
+
+      <a href="glossary.html" class="ov-explore-card ov-explore--glossary">
+        <div class="ov-explore-icon">📋</div>
+        <h3>Glossary</h3>
+        <p>
+          Every key term — from <strong>active recall</strong> to <strong>working memory</strong> —
+          explained in plain English. <em>Fully searchable, with sources.</em>
+        </p>
+        <span class="ov-explore-link">Browse the glossary →</span>
+      </a>
+
+      <a href="resources.html" class="ov-explore-card ov-explore--resources">
+        <div class="ov-explore-icon">🌐</div>
+        <h3>Resources</h3>
+        <p>
+          <strong>Handpicked free websites and videos</strong> for students, parents, and teachers.
+          <em>Filtered by audience</em> so you find what's relevant to you quickly.
+        </p>
+        <span class="ov-explore-link">Browse resources →</span>
+      </a>
+
+    </div>
+  </section>
+
+  <!-- ── BACK TO MAIN SITE ── -->
+  <section class="ov-back-strip">
+    <div class="ov-back-inner">
+      <div>
+        <h2>Want to practise what you've learned?</h2>
+        <p>Head back to the main site to test your vocabulary with the interactive quiz — or grab the books.</p>
+      </div>
+      <div class="ov-back-btns">
+        <a href="index.html#quiz" class="btn btn-yellow">Play the Quiz →</a>
+        <a href="index.html#books" class="btn btn-ghost">See the Books</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── FOOTER ── -->
+  <footer>
+    <p>© 2026 <strong>WordScout11Plus</strong>. All rights reserved. · By Patricia Andreev</p>
+  </footer>
+
+</body>
 </html>
