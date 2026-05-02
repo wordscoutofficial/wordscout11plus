@@ -34,7 +34,7 @@
       <a href="#books">Books</a>
       <a href="#quiz" class="nav-highlight">Play Quiz!</a>
       <a href="#youtube-section">Videos</a>
-      <a href="#learn-science">Learn Science</a>
+      <a href="overview.html">Learn Science</a>
       <a href="#reviews">Reviews</a>
       <a href="#contact">Contact</a>
     </nav>
@@ -757,8 +757,35 @@
     return arr;
   }
 
-  // Start quiz on load
-  startQuiz();
+  // ── TIMER BUG FIX ────────────────────────────────────
+  // Only start the quiz (and its timer) once the user
+  // has actually scrolled the quiz section into view.
+  // Without this, the 15-second timer ticks down silently
+  // in the background as soon as the page loads.
+  let quizStarted = false;
+
+  const quizSection = document.getElementById('quiz');
+  if (quizSection) {
+    const quizVisibilityObs = new IntersectionObserver(entries => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting && !quizStarted) {
+          quizStarted = true;
+          startQuiz();
+          quizVisibilityObs.disconnect(); // only trigger once
+        } else if (!entry.isIntersecting && quizStarted) {
+          // Pause timer when quiz scrolls out of view
+          clearInterval(timerInterval);
+        } else if (entry.isIntersecting && quizStarted && answered === false) {
+          // Resume timer if user scrolls back and question is unanswered
+          if (timeLeft > 0 && !answered) startTimer();
+        }
+      });
+    }, { threshold: 0.3 }); // quiz must be 30% visible before starting
+
+    quizVisibilityObs.observe(quizSection);
+  } else {
+    startQuiz(); // fallback
+  }
 
   /* ─── SCROLL REVEAL ──────────────────────────────── */
   const revealObs = new IntersectionObserver(entries => {
