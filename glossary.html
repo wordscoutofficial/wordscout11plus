@@ -1,0 +1,337 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="A plain-English glossary of learning science terms, from active recall to working memory.">
+    <title>Glossary – WordScout11Plus</title>
+    <link rel="stylesheet" href="styles.css" />
+    <link rel="stylesheet" href="glossary.css" />
+    <link rel="icon" href="favicon.ico" type="image/x-icon" />
+    <script src="script.js" defer></script>
+    <link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@400;600;800&display=swap" rel="stylesheet">
+  </head>
+<!-- I tried my best -->
+  <body>
+
+    <header>
+      <div class="brand">
+        <h3>WordScout11Plus</h3>
+        <a href="https://www.wordscout11plus.com/" target="_blank">Visit our full website</a>
+      </div>
+    </header>
+
+    <nav class="nav-bar" aria-label="Main navigation">
+      <a href="index.html">Home</a>
+      <a href="funfacts.html">Fun Facts</a>
+      <a href="explanation.html">Explanation</a>
+      <a href="glossary.html">Glossary</a>
+      <a href="resources.html">Resources</a>
+    </nav>
+
+    <!-- page header -->
+    <div class="glos-hero">
+      <p class="glos-eyebrow">Reference</p>
+      <h1>Glossary of learning terms</h1>
+      <p class="glos-sub">All the key words - explained in plain English, no extra knowledge required.</p>
+
+      <!-- live search -->
+      <div class="glos-search-wrap">
+        <input
+          type="text"
+          id="glos-search"
+          class="glos-search"
+          placeholder="Search a term..."
+          aria-label="Search glossary terms"
+          oninput="filterGlossary(this.value)"
+        >
+      </div>
+<!-- thats where it helps with live search-->
+      <!-- alphabet jump buttons -->
+      <div class="alpha-bar" id="alpha-bar">
+        <a href="#letter-A">A</a>
+        <a href="#letter-C">C</a>
+        <a href="#letter-D">D</a>
+        <a href="#letter-E">E</a>
+        <a href="#letter-F">F</a>
+        <a href="#letter-I">I</a>
+        <a href="#letter-L">L</a>
+        <a href="#letter-M">M</a>
+        <a href="#letter-P">P</a>
+        <a href="#letter-R">R</a>
+        <a href="#letter-S">S</a>
+        <a href="#letter-W">W</a>
+      </div>
+    </div>
+
+    <!-- glossary list -->
+    <main class="glos-main" id="glos-list">
+
+      <div class="glos-letter-group" id="letter-A">
+        <div class="glos-letter-badge">A</div>
+
+        <div class="glos-entry" data-term="active recall">
+          <div class="glos-term">Active recall</div>
+          <div class="glos-def">
+            The practice of <strong>retrieving information from memory without looking at your notes</strong>.
+            Instead of re-reading a textbook, you close it and try to write down everything you remember.
+            <em>It feels harder than re-reading, and that difficulty is precisely why it works.</em>
+            The brain strengthens a memory each time it has to search for it.
+          </div>
+        </div>
+
+        <div class="glos-entry" data-term="automaticity">
+          <div class="glos-term">Automaticity</div>
+          <div class="glos-def">
+            When a skill becomes so well-practised that it requires <strong>almost no conscious effort</strong>.
+            Think of how you don't need to think about each letter when you type -
+            <em>your fingers just know</em>. Automaticity frees up mental space for harder thinking.
+            It's built through consistent, repeated practice over time.
+          </div>
+        </div>
+      </div>
+
+      <div class="glos-letter-group" id="letter-C">
+        <div class="glos-letter-badge">C</div>
+
+        <div class="glos-entry" data-term="cognitive load">
+          <div class="glos-term">Cognitive load</div>
+          <div class="glos-def">
+            The amount of mental effort your working memory is using at any one moment.
+            <em>Think of it like RAM on a computer</em>, you only have so much.
+            When a task has <strong>too high a cognitive load</strong>, learning breaks down.
+            Good teaching reduces unnecessary load so your brain can focus on what matters.
+          </div>
+          
+        </div>
+
+        <div class="glos-entry" data-term="consolidation">
+          <div class="glos-term">Consolidation</div>
+          <div class="glos-def">
+            The process by which <strong>short-term memories are converted into long-term ones</strong>.
+            This happens mostly during sleep, which is one reason a good night's rest before an exam
+            matters just as much as the studying itself.
+            <em>Pulling an all-nighter actively disrupts consolidation.</em>
+          </div>
+        </div>
+      </div>
+
+      <div class="glos-letter-group" id="letter-D">
+        <div class="glos-letter-badge">D</div>
+
+        <div class="glos-entry" data-term="desirable difficulty">
+          <div class="glos-term">Desirable difficulty</div>
+          <div class="glos-def">
+            A learning challenge that feels harder in the short term but <strong>produces stronger
+            long-term memory</strong>. The term was coined by psychologist Robert Bjork.
+            <em>If studying feels effortless, you're probably not learning much.</em>
+            Struggling to retrieve an answer, even failing, makes the eventual memory stronger.
+          </div>
+        </div>
+
+        <div class="glos-entry" data-term="distributed practice">
+          <div class="glos-term">Distributed practice</div>
+          <div class="glos-def">
+            Spreading study sessions out over time rather than cramming them into one block.
+            Also called <em>spaced practice</em> or spaced repetition.
+            <strong>One hour across four days beats four hours in one sitting</strong>, consistently,
+            across almost every subject and age group studied.
+          </div>
+        </div>
+      </div>
+
+      <div class="glos-letter-group" id="letter-E">
+        <div class="glos-letter-badge">E</div>
+
+        <div class="glos-entry" data-term="elaborative interrogation">
+          <div class="glos-term">Elaborative interrogation</div>
+          <div class="glos-def">
+            A strategy where you ask yourself <strong>"why is this true?"</strong> and
+            <strong>"how does this connect to what I already know?"</strong> after reading a fact.
+            <em>It forces your brain to do something with the information</em>, rather than
+            letting it slide past. The connections you make act as hooks that make the memory easier to find later.
+          </div>
+          
+        </div>
+
+        <div class="glos-entry" data-term="encoding">
+          <div class="glos-term">Encoding</div>
+          <div class="glos-def">
+            The first stage of memory, <em>the moment new information enters your brain</em>
+            and gets processed for storage. <strong>Not all encoding is equal.</strong>
+            Information linked to meaning, emotion, or existing knowledge encodes far more
+            deeply than information read passively.
+          </div>
+        </div>
+      </div>
+
+      <div class="glos-letter-group" id="letter-F">
+        <div class="glos-letter-badge">F</div>
+
+        <div class="glos-entry" data-term="forgetting curve">
+          <div class="glos-term">Forgetting curve</div>
+          <div class="glos-def">
+            A graph showing <strong>how quickly memory fades after learning</strong>,
+            first described by Hermann Ebbinghaus in 1885.
+            <em>Without review, roughly half of new information is forgotten within 24 hours</em>
+            and most of the rest within a week. The curve flattens dramatically each time
+            you review the material.
+          </div>
+          <a class="glos-source" href="https://ncase.me/remember/" target="_blank">How to remember anything forever ↗</a>
+        </div>
+      </div>
+
+      <div class="glos-letter-group" id="letter-I">
+        <div class="glos-letter-badge">I</div>
+
+        <div class="glos-entry" data-term="interleaving">
+          <div class="glos-term">Interleaving</div>
+          <div class="glos-def">
+            Mixing different topics or types of problems within a single study session,
+            rather than blocking all of one type together.
+            <em>It feels messier and slower</em>, but research shows it <strong>significantly
+            improves long-term retention and the ability to apply knowledge</strong>
+            in new situations.
+          </div>
+        </div>
+      </div>
+
+      <div class="glos-letter-group" id="letter-L">
+        <div class="glos-letter-badge">L</div>
+
+        <div class="glos-entry" data-term="long-term memory">
+          <div class="glos-term">Long-term memory</div>
+          <div class="glos-def">
+            The brain's <strong>vast, relatively permanent storage system</strong>.
+            Unlike working memory, long-term memory has no known capacity limit.
+            <em>The goal of all studying is to move information from working memory
+            into long-term memory</em>, where it can be retrieved days, years, or
+            decades later.
+          </div>
+        </div>
+      </div>
+
+      <div class="glos-letter-group" id="letter-M">
+        <div class="glos-letter-badge">M</div>
+
+        <div class="glos-entry" data-term="metacognition">
+          <div class="glos-term">Metacognition</div>
+          <div class="glos-def">
+            <em>Thinking about your own thinking.</em> Knowing when you've understood something,
+            when you haven't, and which study strategies work best for you.
+            <strong>Students with strong metacognition consistently outperform those without it</strong>
+            , not because they're smarter, but because they study more accurately.
+          </div>
+        </div>
+
+        <div class="glos-entry" data-term="mnemonic">
+          <div class="glos-term">Mnemonic</div>
+          <div class="glos-def">
+            A <strong>memory aid</strong> , any technique that links new information to something
+            more memorable. Acronyms, rhymes, vivid images, and stories are all mnemonics.
+            <em>Richard Of York Gave Battle In Vain</em> , the colours of the rainbow (Red, Orange,
+            Yellow, Green, Blue, Indigo, Violet) , is a classic example.
+          </div>
+        </div>
+      </div>
+
+      <div class="glos-letter-group" id="letter-P">
+        <div class="glos-letter-badge">P</div>
+
+        <div class="glos-entry" data-term="protégé effect">
+          <div class="glos-term">Protégé Effect</div>
+          <div class="glos-def">
+            The phenomenon where <strong>teaching or preparing to teach material
+            improves your own understanding of it</strong>.
+            <em>When you know someone else is counting on your explanation, you study more carefully.</em>
+            You also become quicker to spot gaps in your own knowledge, the exact gaps
+            that would have tripped you up in an exam.
+          </div>
+        
+        </div>
+      </div>
+
+      <div class="glos-letter-group" id="letter-R">
+        <div class="glos-letter-badge">R</div>
+
+        <div class="glos-entry" data-term="retrieval practice">
+          <div class="glos-term">Retrieval practice</div>
+          <div class="glos-def">
+            The broader term for any learning activity that involves <strong>pulling information
+            from memory</strong> , flashcards, practice tests, writing summaries from memory,
+            answering questions without notes. <em>The testing effect</em>, the finding that
+            being tested on material improves retention more than restudying it , is one of
+            the most robust findings in cognitive psychology.
+          </div>
+          
+        </div>
+      </div>
+
+      <div class="glos-letter-group" id="letter-S">
+        <div class="glos-letter-badge">S</div>
+
+        <div class="glos-entry" data-term="spaced repetition">
+          <div class="glos-term">Spaced repetition</div>
+          <div class="glos-def">
+            A study method that uses <strong>increasing intervals between review sessions</strong>
+            to maximise memory retention. You review material just as you're about to forget it ,
+            which resets the forgetting curve and strengthens the memory.
+            <em>Apps like Anki automate this process</em>, scheduling reviews at the optimal moment.
+          </div>
+        </div>
+      </div>
+
+      <div class="glos-letter-group" id="letter-W">
+        <div class="glos-letter-badge">W</div>
+
+        <div class="glos-entry" data-term="working memory">
+          <div class="glos-term">Working memory</div>
+          <div class="glos-def">
+            Your brain's <em>mental workspace</em> , the small amount of information
+            you can hold and manipulate at any one time. <strong>Most people can hold
+            around 4 chunks of information in working memory simultaneously.</strong>
+            When working memory is overloaded, learning stops. This is why breaking
+            complex topics into smaller pieces is so effective.
+          </div>
+        </div>
+      </div>
+
+      <!-- No results message -->
+      <p class="glos-noresult" id="glos-noresult" style="display:none;">
+        No terms match your search. Try a different word!
+      </p>
+
+    </main>
+
+    <footer>
+      <p>© 2026 WordScout11Plus. All rights reserved.</p>
+    </footer>
+<!-- JAVA ScRIPT HERE-->
+    <script>
+      function filterGlossary(query) { // reads typing and searches for it
+        const q = query.toLowerCase().trim(); // basically memory
+        const entries = document.querySelectorAll('.glos-entry'); 
+        const groups = document.querySelectorAll('.glos-letter-group');    // last two lines grabbed everything we need (it undertsadns it?)
+        let totalVisible = 0;
+              // here its matching up the two - typed and already here, so if it matches, it shows up
+        entries.forEach(entry => {
+          const term = entry.dataset.term || ''; // get searchable text
+          const def = entry.querySelector('.glos-def').textContent.toLowerCase();
+          const match = !q || term.includes(q) || def.includes(q);
+          entry.style.display = match ? '' : 'none';  //show or hide the entry
+          if (match) totalVisible++;   // count visible results
+        });
+        // show hide letter groups
+        groups.forEach(group => {
+          const visible = [...group.querySelectorAll('.glos-entry')].some(e => e.style.display !== 'none');
+          group.style.display = visible ? '' : 'none';
+        });
+
+        document.getElementById('glos-noresult').style.display = totalVisible === 0 ? 'block' : 'none';  // show no results image
+        document.getElementById('alpha-bar').style.display = q ? 'none' : 'flex';  //hide alphabet bar while typing
+      }
+    </script>
+
+  </body>
+</html>
