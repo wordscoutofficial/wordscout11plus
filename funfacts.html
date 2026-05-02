@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Surprising and fascinating facts about how your brain learns — backed by science.">
+    <title>Fun Facts – WordScout11Plus</title>
+    <link rel="stylesheet" href="styles.css" />
+    <link rel="stylesheet" href="funfacts.css" />
+    <link rel="icon" href="favicon.ico" type="image/x-icon" />
+    <script src="script.js" defer></script>
+    <link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@400;600;800&display=swap" rel="stylesheet">
+  </head>
+
+  <body>
+
+    <header>
+      <div class="brand">
+        <h3>WordScout11Plus</h3>
+        <a href="https://www.wordscout11plus.com/" target="_blank">Visit our full website</a>
+      </div>
+    </header>
+
+    <nav class="nav-bar" aria-label="Main navigation">
+      <a href="index.html">Home</a>
+      <a href="funfacts.html">Fun Facts</a>
+      <a href="explanation.html">Explanation</a>
+      <a href="glossary.html">Glossary</a>
+      <a href="resources.html">Resources</a>
+    </nav>
+
+    <!-- Page header -->
+    <div class="ff-hero">
+      <p class="ff-eyebrow">Did you know?</p>
+      <h1>Fascinating facts about your brain</h1>
+      <p class="ff-sub">
+        Your brain is <em>stranger and more powerful than you think</em>.
+        Here are some of the most surprising things science has discovered
+        about how we learn, remember, and forget.
+      </p>
+    </div>
+
+    <!-- Filter buttons -->
+    <div class="ff-filters" role="group" aria-label="Filter facts by category">
+      <button class="ff-filter active" onclick="filterFacts('all', this)">All facts</button>
+      <button class="ff-filter" onclick="filterFacts('memory', this)">Memory</button>
+      <button class="ff-filter" onclick="filterFacts('sleep', this)">Sleep</button>
+      <button class="ff-filter" onclick="filterFacts('brain', this)">The brain</button>
+      <button class="ff-filter" onclick="filterFacts('habits', this)">Habits</button>
+    </div>
+
+    <!-- Facts grid -->
+    <main class="ff-grid" id="ff-grid">
+
+      <div class="ff-card ff-card--large" data-cat="memory">
+        <div class="ff-card-tag">Memory</div>
+        <p class="ff-card-num">50%</p>
+        <h2>You forget half of what you learn within 24 hours</h2>
+        <p>
+          Hermann Ebbinghaus proved this in 1885 by memorising hundreds of nonsense syllables
+          and tracking his own forgetting. <strong>Without any review, roughly half of new
+          information vanishes within a day</strong> — and most of the rest within a week.
+          <em>The solution isn't to study more. It's to review at the right moments.</em>
+        </p>
+        <a class="ff-source" href="https://ncase.me/remember/" target="_blank">Source: How to remember anything forever ↗</a>
+      </div>
+
+      <div class="ff-card" data-cat="sleep">
+        <div class="ff-card-tag ff-tag--sleep">Sleep</div>
+        <h2>Sleep is when your brain saves the file</h2>
+        <p>
+          While you sleep, your brain <strong>replays the day's learning</strong> and
+          transfers it from short-term to long-term memory.
+          <em>An all-nighter before an exam actively erases learning</em>
+          that happened earlier in the week.
+        </p>
+        <a class="ff-source" href="https://www.sleepfoundation.org/sleep-and-memory" target="_blank">Source: Sleep Foundation ↗</a>
+      </div>
+
+      <div class="ff-card" data-cat="brain">
+        <div class="ff-card-tag ff-tag--brain">The brain</div>
+        <h2>Your brain can't actually multitask</h2>
+        <p>
+          What feels like multitasking is really <em>rapid switching</em> between tasks.
+          <strong>Each switch costs mental energy and reduces accuracy.</strong>
+          Studying with your phone nearby — even face down — measurably reduces performance.
+        </p>
+        <a class="ff-source" href="https://www.apa.org/topics/research/multitasking" target="_blank">Source: APA ↗</a>
+      </div>
+
+      <div class="ff-card ff-card--accent" data-cat="memory">
+        <div class="ff-card-tag ff-tag--memory">Memory</div>
+        <h2>Struggling to remember is actually good for you</h2>
+        <p>
+          The harder it is to retrieve a memory, <strong>the stronger it becomes once you do</strong>.
+          Psychologists call this <em>desirable difficulty</em>.
+          Feeling frustrated when testing yourself isn't a sign you're failing — it's a sign
+          you're building something durable.
+        </p>
+        <a class="ff-source" href="https://bjorklab.psych.ucla.edu/research/" target="_blank">Source: Bjork Learning Lab ↗</a>
+      </div>
+
+      <div class="ff-card" data-cat="habits">
+        <div class="ff-card-tag ff-tag--habits">Habits</div>
+        <h2>Short sessions beat long ones — every time</h2>
+        <p>
+          <strong>Four 30-minute sessions produce better results than a single two-hour one</strong>,
+          even with identical total study time.
+          <em>Your brain needs time between sessions to consolidate what it's learned.</em>
+          Gaps aren't wasted time — they're where the magic happens.
+        </p>
+        <a class="ff-source" href="https://www.learningscientists.org/spaced-practice" target="_blank">Source: The Learning Scientists ↗</a>
+      </div>
+
+      <div class="ff-card" data-cat="brain">
+        <div class="ff-card-tag ff-tag--brain">The brain</div>
+        <h2>Emotion makes memories stick</h2>
+        <p>
+          The amygdala — your brain's emotional centre — <strong>flags emotional moments as
+          important and boosts how strongly they're stored</strong>.
+          <em>This is why you remember exactly where you were during big events.</em>
+          Connecting learning to curiosity or genuine interest activates the same system.
+        </p>
+      </div>
+
+      <div class="ff-card ff-card--wide" data-cat="memory">
+        <div class="ff-card-tag ff-tag--memory">Memory</div>
+        <h2>The testing effect: being tested is better than studying</h2>
+        <p>
+          In a famous 2006 study, Roediger and Karpicke gave students a text to learn.
+          One group re-read it four times. The other group read it once and then took
+          three practice tests. <strong>One week later, the test group remembered
+          50% more</strong> than the re-readers.
+          <em>Being tested on material doesn't just measure learning — it causes learning.</em>
+          Quizzes, flashcards, and practice papers aren't just assessment tools.
+          They are some of the most powerful study tools that exist.
+        </p>
+        <a class="ff-source" href="https://www.apa.org/science/about/psa/2016/06/learning-memory" target="_blank">Source: APA ↗</a>
+      </div>
+
+      <div class="ff-card" data-cat="sleep">
+        <div class="ff-card-tag ff-tag--sleep">Sleep</div>
+        <h2>Naps boost learning almost immediately</h2>
+        <p>
+          A <strong>10–20 minute nap after studying</strong> can significantly improve
+          how much you retain. <em>Your brain uses even short sleep to consolidate memories</em>
+          that were just formed — giving revision a natural, built-in boost.
+        </p>
+        <a class="ff-source" href="https://www.sleepfoundation.org/napping" target="_blank">Source: Sleep Foundation ↗</a>
+      </div>
+
+      <div class="ff-card" data-cat="habits">
+        <div class="ff-card-tag ff-tag--habits">Habits</div>
+        <h2>Where you study matters less than consistency</h2>
+        <p>
+          <em>Some research suggests variety of location can help</em>, but the biggest factor
+          is simply <strong>studying at the same time each day</strong>.
+          Routine reduces the mental friction of starting — and starting is usually the hardest part.
+        </p>
+      </div>
+
+      <div class="ff-card" data-cat="brain">
+        <div class="ff-card-tag ff-tag--brain">The brain</div>
+        <h2>Working memory holds about 4 things at once</h2>
+        <p>
+          Psychologist George Miller famously said we can hold <em>"seven, plus or minus two"</em>
+          items in working memory. More recent research puts it closer to <strong>four chunks</strong>.
+          This is why breaking complex topics into smaller pieces isn't just helpful —
+          <em>it's how the brain actually works</em>.
+        </p>
+      </div>
+
+    </main>
+
+    <!-- Bottom CTA -->
+    <section class="ff-cta">
+      <h2>Want to put these facts to work?</h2>
+      <p>Head to the Explanation page to see exactly <em>how</em> to apply each technique.</p>
+      <a href="explanation.html" class="btn">Read the explanation ↗</a>
+    </section>
+
+    <footer>
+      <p>© 2026 WordScout11Plus. All rights reserved.</p>
+    </footer>
+
+    <script>
+      function filterFacts(cat, btn) {
+        document.querySelectorAll('.ff-filter').forEach(b => b.classList.remove('active'));
+        btn.classList.add('active');
+        document.querySelectorAll('.ff-card').forEach(card => {
+          if (cat === 'all' || card.dataset.cat === cat) {
+            card.style.display = '';
+          } else {
+            card.style.display = 'none';
+          }
+        });
+      }
+    </script>
+
+  </body>
+</html>
