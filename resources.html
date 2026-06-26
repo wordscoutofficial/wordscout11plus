@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Useful websites and videos for students, parents, and teachers who want to understand how learning works.">
+    <title>Resources | WordScout11Plus</title>
+    <link rel="stylesheet" href="styles.css" />
+    <link rel="icon" href="favicon.ico" type="image/x-icon" />
+    <script src="script.js" defer></script>
+    <link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@400;600;800&display=swap" rel="stylesheet">
+  </head>
+
+  <body>
+
+    <!-- Brand bar -->
+    <header>
+      <div class="brand">
+        <h3>WordScout11Plus</h3>
+        <a href="https://www.wordscout11plus.com/" target="_blank">Back to full website</a>
+      </div>
+    </header>
+
+    <!-- Navigation - Overview always links back to index.html -->
+    <nav class="nav-bar" aria-label="Main navigation">
+      <a href="index.html">Overview</a>
+      <a href="funfacts.html">Fun Facts</a>
+      <a href="explanation.html">Explanation</a>
+      <a href="glossary.html">Glossary</a>
+      <a href="resources.html" class="active">Resources</a>
+    </nav>
+
+    <!-- Page hero -->
+    <div class="res-hero">
+      <p class="res-eyebrow">Further reading</p>
+      <h1>Resources and links</h1>
+      <p class="res-sub">
+        A small collection of websites and videos we have found genuinely useful.
+        Everything here is free. Use the buttons below to filter by who the resource
+        is aimed at.
+      </p>
+
+      <!-- Audience filter tabs -->
+      <div class="res-tabs" role="group" aria-label="Filter by audience">
+        <button class="res-tab active" onclick="filterAudience('all', this)">Everything</button>
+        <button class="res-tab" onclick="filterAudience('students', this)">Students</button>
+        <button class="res-tab" onclick="filterAudience('parents', this)">Parents</button>
+        <button class="res-tab" onclick="filterAudience('teachers', this)">Teachers</button>
+      </div>
+    </div>
+
+    <main class="res-main">
+
+      <!-- WEBSITES SECTION -->
+      <section class="res-section">
+        <div class="res-section-header">
+          <div class="res-section-icon">W</div>
+          <h2>Websites and articles</h2>
+        </div>
+
+        <div class="res-grid">
+
+          <a class="res-card" href="https://www.learningscientists.org" target="_blank" data-audience="students teachers">
+            <div class="res-card-top">
+              <span class="res-type-badge res-badge--web">Website</span>
+              <div class="res-audience-tags">
+                <span class="res-aud res-aud--students">Students</span>
+                <span class="res-aud res-aud--teachers">Teachers</span>
+              </div>
+            </div>
+            <h3>The Learning Scientists</h3>
+            <p>
+              A really good place to start. It covers all the main study strategies in plain English,
+              with <strong>free posters and podcasts</strong> you can download.
+              <em>Written by researchers, but easy to read.</em>
+            </p>
+            <div class="res-visit">Visit site ↗</div>
+          </a>
+
+          <a class="res-card" href="https://ncase.me/remember/" target="_blank" data-audience="students parents">
+            <div class="res-card-top">
+              <span class="res-type-badge res-badge--web">Interactive</span>
+              <div class="res-audience-tags">
+                <span class="res-aud res-aud--students">Students</span>
+                <span class="res-aud res-aud--parents">Parents</span>
+              </div>
+            </div>
+            <h3>How to Remember Anything Forever</h3>
+            <p>
+              An illustrated, interactive comic that walks through spaced repetition
+              in a way that actually makes sense. <strong>Takes about 20 minutes</strong>
+              and is genuinely fun to read. Good for ages 10 and up.
+            </p>
+            <div class="res-visit">Visit site ↗</div>
+          </a>
+
+          <a class="res-card" href="https://www.bbc.co.uk/bitesize" target="_blank" data-audience="students parents">
+            <div class="res-card-top">
+              <span class="res-type-badge res-badge--web">Website</span>
+              <div class="res-audience-tags">
+                <span class="res-aud res-aud--students">Students</span>
+                <span class="res-aud res-aud--parents">Parents</span>
+              </div>
+            </div>
+            <h3>BBC Bitesize</h3>
+            <p>
+              Free revision content covering <strong>Key Stage 1 through GCSE</strong>,
+              aligned to the UK curriculum. <em>Particularly useful for 11+ preparation</em>
+              as it covers English, Maths, and Science with built-in quizzes.
+            </p>
+            <div class="res-visit">Visit site ↗</div>
+          </a>
+
+          <a class="res-card" href="https://www.theschoolrun.com/11-plus" target="_blank" data-audience="parents students">
+            <div class="res-card-top">
+              <span class="res-type-badge res-badge--web">Guide</span>
+              <div class="res-audience-tags">
+                <span class="res-aud res-aud--parents">Parents</span>
+                <span class="res-aud res-aud--students">Students</span>
+              </div>
+            </div>
+            <h3>TheSchoolRun: 11 Plus Guide</h3>
+            <p>
+              A straightforward UK guide to the 11 plus exam. Covers <strong>what to expect,
+              how to prepare, and what the different tests involve</strong>.
+              <em>Written for parents but clear enough for older children to read too.</em>
+            </p>
+            <div class="res-visit">Visit site ↗</div>
+          </a>
+
+          <a class="res-card" href="https://www.educationendowmentfoundation.org.uk/education-evidence/teaching-learning-toolkit" target="_blank" data-audience="teachers parents">
+            <div class="res-card-top">
+              <span class="res-type-badge res-badge--web">Research</span>
+              <div class="res-audience-tags">
+                <span class="res-aud res-aud--teachers">Teachers</span>
+                <span class="res-aud res-aud--parents">Parents</span>
+              </div>
+            </div>
+            <h3>EEF Teaching and Learning Toolkit</h3>
+            <p>
+              The Education Endowment Foundation summarises <strong>the evidence behind
+              different teaching approaches</strong> and rates how effective each one is.
+              <em>Useful for teachers and parents who want to understand what works in schools.</em>
+            </p>
+            <div class="res-visit">Visit site ↗</div>
+          </a>
+
+        </div>
+      </section>
+
+      <!-- VIDEOS SECTION -->
+      <section class="res-section">
+        <div class="res-section-header">
+          <div class="res-section-icon">V</div>
+          <h2>Videos worth watching</h2>
+        </div>
+
+        <div class="res-grid">
+
+          <a class="res-card res-card--video" href="https://www.youtube.com/watch?v=IlU-zDU6aQ0" target="_blank" data-audience="students parents">
+            <div class="res-card-top">
+              <span class="res-type-badge res-badge--video">YouTube</span>
+              <div class="res-audience-tags">
+                <span class="res-aud res-aud--students">Students</span>
+                <span class="res-aud res-aud--parents">Parents</span>
+              </div>
+            </div>
+            <!-- Simple styled video placeholder -->
+            <div class="res-video-thumb" aria-hidden="true">
+              <div class="res-play-btn">&#9654;</div>
+              <div class="res-video-label">~10 min</div>
+            </div>
+            <h3>Marty Lobdell: Study Less, Study Smart</h3>
+            <p>
+              One of the most watched study skills videos around.
+              <strong>Practical and easy to follow</strong>, with advice on how to get
+              more out of shorter study sessions. <em>Good for students and parents alike.</em>
+            </p>
+            <div class="res-visit">Watch on YouTube ↗</div>
+          </a>
+
+          <a class="res-card res-card--video" href="https://www.youtube.com/watch?v=_X0mgOOSpLU" target="_blank" data-audience="students parents teachers">
+            <div class="res-card-top">
+              <span class="res-type-badge res-badge--video">YouTube</span>
+              <div class="res-audience-tags">
+                <span class="res-aud res-aud--students">Students</span>
+                <span class="res-aud res-aud--parents">Parents</span>
+                <span class="res-aud res-aud--teachers">Teachers</span>
+              </div>
+            </div>
+            <div class="res-video-thumb" aria-hidden="true">
+              <div class="res-play-btn">&#9654;</div>
+              <div class="res-video-label">~10 min</div>
+            </div>
+            <h3>TED: The Power of Believing You Can Improve</h3>
+            <p>
+              Carol Dweck's well-known talk on <em>growth mindset</em>. The main idea is that
+              <strong>believing you can improve actually helps you improve</strong>.
+              Worth watching with your child.
+            </p>
+            <div class="res-visit">Watch on YouTube ↗</div>
+          </a>
+
+          <a class="res-card res-card--video" href="https://www.youtube.com/watch?v=V-UvSKe8jW4" target="_blank" data-audience="students">
+            <div class="res-card-top">
+              <span class="res-type-badge res-badge--video">YouTube</span>
+              <div class="res-audience-tags">
+                <span class="res-aud res-aud--students">Students</span>
+              </div>
+            </div>
+            <div class="res-video-thumb" aria-hidden="true">
+              <div class="res-play-btn">&#9654;</div>
+              <div class="res-video-label">~6 min</div>
+            </div>
+            <h3>Spaced Repetition: How to Never Forget Anything</h3>
+            <p>
+              A short, clear video explaining spaced repetition and why cramming does not work.
+              <strong>Shows how to set up a simple revision timetable</strong>
+              without needing any apps.
+            </p>
+            <div class="res-visit">Watch on YouTube ↗</div>
+          </a>
+
+          <a class="res-card res-card--video" href="https://www.youtube.com/watch?v=o0x5aHCGFKQ" target="_blank" data-audience="teachers parents">
+            <div class="res-card-top">
+              <span class="res-type-badge res-badge--video">YouTube</span>
+              <div class="res-audience-tags">
+                <span class="res-aud res-aud--teachers">Teachers</span>
+                <span class="res-aud res-aud--parents">Parents</span>
+              </div>
+            </div>
+            <div class="res-video-thumb" aria-hidden="true">
+              <div class="res-play-btn">&#9654;</div>
+              <div class="res-video-label">~12 min</div>
+            </div>
+            <h3>Retrieval Practice: The Research and the Classroom</h3>
+            <p>
+              A talk for teachers on <strong>how to use retrieval practice in lessons
+              and for homework</strong>. <em>Parents will also find it useful</em>
+              for understanding how to support studying at home.
+            </p>
+            <div class="res-visit">Watch on YouTube ↗</div>
+          </a>
+
+        </div>
+      </section>
+
+      <!-- No results message -->
+      <p class="res-noresult" id="res-noresult" style="display:none;">
+        No resources match that filter. Try a different tab.
+      </p>
+
+    </main>
+
+    <!-- Books section - unordered list, class name fixed (was book-lists1 in CSS, book-lists in HTML) -->
+    <section class="book-list res-main">
+      <div class="book-section-header">
+        <div class="book-section-icon">B</div>
+        <h2>Books worth reading</h2>
+      </div>
+
+      <ul class="book-lists">
+        <li><strong>How to Become a Straight-A Student</strong> by Cal Newport</li>
+        <li><strong>Make It Stick</strong> by Peter Brown, Henry Roediger and Mark McDaniel</li>
+        <li><strong>A Mind for Numbers</strong> by Barbara Oakley</li>
+      </ul>
+    </section>
+
+    <!-- Disclaimer -->
+    <section class="res-note">
+      <p>
+        All resources on this page are free to access.
+        WordScout11Plus is not affiliated with any of the sites or videos listed here.
+        They are included because we think they are genuinely helpful.
+      </p>
+    </section>
+
+    <footer>
+      <p>© 2026 WordScout11Plus. All rights reserved.</p>
+    </footer>
+
+
+  </body>
+</html>
