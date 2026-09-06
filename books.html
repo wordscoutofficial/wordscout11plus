@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="WordScout and SpellScout — 11+ vocabulary and spelling books for ages 7 to 11. By Patricia Andreev. Available on Amazon.">
+  <title>The Books | WordScout11Plus</title>
+  <link rel="stylesheet" href="styles.css" />
+  <link rel="icon" href="favicon.ico" type="image/x-icon" />
+  <link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@400;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --teal:      #14c4ca;
+      --teal-deep: #0a8f94;
+      --teal-dark: #062c33;
+      --ink:       #111827;
+      --body:      #4b5563;
+      --border:    #e5e7eb;
+      --off:       #f9fafb;
+    }
+
+    html { scroll-behavior: smooth; scroll-padding-top: 60px; }
+    body { background: #fff; color: var(--ink); }
+
+    .wrap {
+      max-width: 980px;
+      margin: 0 auto;
+      padding: 0 clamp(20px, 5vw, 48px);
+    }
+
+    /* Brand bar */
+    .brand {
+      background: var(--teal);
+      padding: 14px clamp(20px, 5vw, 48px);
+      display: flex; justify-content: space-between; align-items: center;
+    }
+    .brand-left { display: flex; align-items: center; gap: 12px; }
+    .brand-logo {
+      width: 38px; height: 38px; border-radius: 10px;
+      background: white; color: var(--teal);
+      font-weight: 800; font-size: 1.3rem;
+      display: flex; align-items: center; justify-content: center;
+    }
+    .brand h3 { margin: 0; color: white; font-size: 1.25rem; font-weight: 800; }
+    .brand a { color: rgba(255,255,255,0.88); font-size: 0.88rem; font-weight: 600; text-decoration: none; border-bottom: 1px solid rgba(255,255,255,0.4); }
+    .brand a:hover { color: white; }
+
+    /* Page header */
+    .page-header {
+      padding: clamp(52px, 8vw, 88px) 0 clamp(36px, 5vw, 52px);
+    }
+    .eyebrow {
+      font-size: 0.75rem; letter-spacing: 0.16em; text-transform: uppercase;
+      color: var(--teal-deep); font-weight: 800; margin: 0 0 10px;
+    }
+    .page-title {
+      font-size: clamp(2rem, 4.5vw, 3.2rem);
+      font-weight: 800; margin: 0 0 14px;
+      letter-spacing: -0.025em; color: var(--ink); line-height: 1.1;
+    }
+    .page-lead {
+      font-size: 1.02rem; color: var(--body);
+      line-height: 1.8; margin: 0; max-width: 540px;
+    }
+
+    /* Book entries */
+    .books-list {
+      padding-bottom: clamp(56px, 8vw, 96px);
+    }
+
+    .book-entry {
+      display: grid;
+      grid-template-columns: 210px 1fr;
+      gap: clamp(32px, 5vw, 60px);
+      align-items: start;
+      padding: clamp(44px, 6vw, 72px) 0;
+      border-top: 1px solid var(--border);
+    }
+
+    .book-cover-wrap {
+      position: sticky;
+      top: 80px;
+    }
+
+    .book-entry-img {
+      width: 100%;
+      border-radius: 12px;
+      box-shadow: 0 12px 32px rgba(0,0,0,0.15);
+      display: block;
+    }
+
+    .book-entry-info {}
+
+    .coming-soon-badge {
+      display: inline-block;
+      background: #fef3c7;
+      color: #92400e;
+      font-size: 0.7rem;
+      font-weight: 800;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      padding: 5px 13px;
+      border-radius: 20px;
+      margin-bottom: 16px;
+      border: 1px solid #fcd34d;
+    }
+
+    .book-entry h2 {
+      font-size: clamp(1.6rem, 3vw, 2.2rem);
+      font-weight: 800; margin: 0 0 5px;
+      color: var(--ink); letter-spacing: -0.02em;
+    }
+    .book-subtitle {
+      font-size: 0.88rem; color: #9ca3af;
+      margin: 0 0 22px; font-weight: 600;
+    }
+    .book-description {
+      font-size: 0.97rem; line-height: 1.85;
+      color: #374151; margin: 0 0 26px;
+    }
+
+    .book-features {
+      list-style: none; padding: 0; margin: 0 0 30px;
+      display: flex; flex-direction: column; gap: 9px;
+    }
+    .book-features li {
+      font-size: 0.9rem; color: var(--body);
+      display: flex; align-items: flex-start; gap: 11px;
+      line-height: 1.6;
+    }
+    .book-features li::before {
+      content: '';
+      display: block; width: 6px; height: 6px;
+      border-radius: 50%; background: var(--teal);
+      flex-shrink: 0; margin-top: 7px;
+    }
+
+    .btn-amazon {
+      display: inline-block;
+      background: var(--teal);
+      color: white;
+      font-weight: 800; font-size: 0.95rem;
+      padding: 13px 28px;
+      border-radius: 40px;
+      text-decoration: none;
+      box-shadow: 0 4px 14px rgba(20,196,202,0.3);
+      transition: background 0.18s, transform 0.18s;
+    }
+    .btn-amazon:hover { background: var(--teal-deep); transform: translateY(-2px); color: white; }
+
+    footer {
+      text-align: center; padding: 26px 20px;
+      background: #1c1c1c; color: rgba(255,255,255,0.42); font-size: 0.85rem;
+    }
+    footer strong { color: #61c8fc; }
+
+    @media (max-width: 660px) {
+      .book-entry { grid-template-columns: 1fr; gap: 24px; }
+      .book-cover-wrap { position: static; }
+      .book-entry-img { max-width: 180px; }
+      .brand a { display: none; }
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <div class="brand">
+      <div class="brand-left">
+        <div class="brand-logo">W</div>
+        <h3>WordScout11Plus</h3>
+      </div>
+      <a href="https://www.wordscout11plus.com/" target="_blank" rel="noopener">Visit our shop</a>
+    </div>
+  </header>
+
+  <nav class="nav-bar" aria-label="Main navigation">
+    <a href="index.html">Home</a>
+    <a href="books.html" class="active">Books</a>
+    <a href="quiz.html">Quiz</a>
+    <a href="funfacts.html">Fun Facts</a>
+    <a href="explanation.html">Learn</a>
+    <a href="glossary.html">Glossary</a>
+    <a href="resources.html">Resources</a>
+  </nav>
+
+  <div class="page-header">
+    <div class="wrap">
+      <p class="eyebrow">Our publications</p>
+      <h1 class="page-title">The Books</h1>
+      <p class="page-lead">Two companion volumes designed to work together. One to build vocabulary, one to practise spelling.</p>
+    </div>
+  </div>
+
+  <div class="books-list">
+    <div class="wrap">
+
+      <div class="book-entry" id="wordscout">
+        <div class="book-cover-wrap">
+          <img class="book-entry-img" src="vocab-cover.jpg" alt="WordScout Vocabulary Notebook cover">
+        </div>
+        <div class="book-entry-info">
+          <span class="coming-soon-badge">2nd Edition Coming Soon</span>
+          <p class="eyebrow">Vocabulary</p>
+          <h2>WordScout</h2>
+          <p class="book-subtitle">KS2, Age 7 to 11 — 11+ Vocabulary Notebook</p>
+          <p class="book-description">
+            Compact, bright, and built for daily practice. WordScout contains 500+ carefully chosen 11+ words,
+            each with a clear definition and an example sentence showing exactly how to use it in context.
+            The layout is designed for short, focused sessions — 10 to 15 minutes a day is enough to build
+            a strong vocabulary steadily over time.
+          </p>
+          <ul class="book-features">
+            <li>500+ words aligned to GL, CEM and independent school papers</li>
+            <li>Clear definitions alongside in-context example sentences</li>
+            <li>Structured for spaced repetition and daily use</li>
+            <li>Rated 5 stars by parents on Amazon</li>
+          </ul>
+          <a class="btn-amazon" href="https://www.amazon.co.uk/dp/B0DJ2WSP35" target="_blank" rel="noopener">Buy on Amazon</a>
+        </div>
+      </div>
+
+      <div class="book-entry" id="spellscout">
+        <div class="book-cover-wrap">
+          <img class="book-entry-img" src="misspell-cover.jpg" alt="SpellScout Spelling Notebook cover">
+        </div>
+        <div class="book-entry-info">
+          <p class="eyebrow">Spelling</p>
+          <h2>SpellScout</h2>
+          <p class="book-subtitle">KS2, Age 7 to 11 — 11+ Spelling Notebook</p>
+          <p class="book-description">
+            A focused spelling notebook to record frequently misspelled words, track progress, and revisit
+            over time. The act of writing things down reinforces memory far more effectively than reading alone.
+            SpellScout gives children a dedicated place to catch their mistakes and turn them into strengths.
+          </p>
+          <ul class="book-features">
+            <li>Space to record and revisit 200+ tricky words</li>
+            <li>Structured for active recall rather than passive re-reading</li>
+            <li>Clear, distraction-free layout</li>
+            <li>Works as a standalone or alongside WordScout</li>
+          </ul>
+          <a class="btn-amazon" href="https://www.amazon.co.uk/SpellScout-Notebook-Exam-Preparation-Words-Even/dp/B0FDVJ6FHZ" target="_blank" rel="noopener">Buy on Amazon</a>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <footer>
+    <p>© 2026 <strong>WordScout11Plus</strong>. All rights reserved. By Patricia Andreev</p>
+  </footer>
+
+</body>
+</html>
