@@ -56,15 +56,15 @@ body {
    NAVIGATION BAR
    Consistent on every page
    ===================== */
-html { scroll-padding-top: 60px; }
+html { scroll-padding-top: 58px; }
 
 .nav-bar {
   position: sticky;
   top: 0;
   z-index: 50;
-  background: #ffffff;
-  border-bottom: 1px solid #e5e7eb;
-  padding: 10px clamp(16px, 4vw, 40px);
+  background: #FFF9A0;
+  border-bottom: 2px solid #e8de00;
+  padding: 9px clamp(16px, 4vw, 40px);
   display: flex;
   justify-content: center;
   gap: 4px;
@@ -75,11 +75,11 @@ html { scroll-padding-top: 60px; }
 }
 
 .nav-bar a {
-  padding: 7px 15px;
+  padding: 6px 14px;
   border-radius: 40px;
-  font-size: 0.87rem;
+  font-size: 0.85rem;
   font-weight: 700;
-  color: #374151;
+  color: #0f3d42;
   text-decoration: none;
   transition: background 0.18s, color 0.18s;
   white-space: nowrap;
@@ -89,6 +89,15 @@ html { scroll-padding-top: 60px; }
 .nav-bar a.active {
   background: #14c4ca;
   color: white;
+}
+
+/* Brand logo image (favicon used as logo across all pages) */
+.brand-logo-img {
+  width: 36px;
+  height: 36px;
+  border-radius: 8px;
+  display: block;
+  flex-shrink: 0;
 }
 
 /* =====================

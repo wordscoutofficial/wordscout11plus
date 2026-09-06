@@ -10,6 +10,72 @@
     <link rel="icon" href="favicon.ico" type="image/x-icon" />
     <script src="script.js" defer></script>
     <link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@400;600;800&display=swap" rel="stylesheet">
+  <style>
+    /* WordScout YouTube video grid */
+    .ws-video-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+      gap: 28px;
+      margin-bottom: 12px;
+    }
+    .ws-video-card {
+      display: flex;
+      flex-direction: column;
+      text-decoration: none;
+      color: inherit;
+      border: 1.5px solid #e5e7eb;
+      border-radius: 14px;
+      overflow: hidden;
+      transition: box-shadow .18s, transform .18s;
+      background: #fff;
+    }
+    .ws-video-card:hover { box-shadow: 0 8px 28px rgba(0,0,0,0.12); transform: translateY(-3px); }
+    .ws-thumb-wrap {
+      position: relative;
+      width: 100%;
+      aspect-ratio: 16/9;
+      background: #062c33;
+      overflow: hidden;
+      flex-shrink: 0;
+    }
+    .ws-thumb {
+      width: 100%; height: 100%; object-fit: cover; display: block;
+      transition: opacity .2s;
+    }
+    .ws-video-card:hover .ws-thumb { opacity: 0.88; }
+    .ws-play {
+      position: absolute; top: 50%; left: 50%;
+      transform: translate(-50%, -50%);
+      width: 44px; height: 44px; border-radius: 50%;
+      background: rgba(255,255,255,0.92);
+      display: flex; align-items: center; justify-content: center;
+      font-size: 1.1rem; color: #062c33;
+      pointer-events: none;
+    }
+    .ws-duration {
+      position: absolute; bottom: 6px; right: 8px;
+      background: rgba(0,0,0,0.76); color: #fff;
+      font-size: 0.72rem; font-weight: 700;
+      padding: 2px 6px; border-radius: 4px;
+    }
+    .ws-video-info {
+      padding: 18px 20px 22px;
+      display: flex; flex-direction: column; gap: 6px;
+      flex: 1;
+    }
+    .ws-tag {
+      font-size: 0.68rem; font-weight: 800;
+      text-transform: uppercase; letter-spacing: 0.13em;
+      color: #0a8f94;
+    }
+    .ws-video-info h3 {
+      margin: 0; font-size: 0.97rem; font-weight: 800;
+      color: #111827; line-height: 1.35;
+    }
+    .ws-video-info p {
+      margin: 0; font-size: 0.85rem; color: #4b5563; line-height: 1.7;
+    }
+  </style>
   </head>
 
   <body>
@@ -17,8 +83,11 @@
     <!-- Brand bar -->
     <header>
       <div class="brand">
-        <h3>WordScout11Plus</h3>
-        <a href="https://www.wordscout11plus.com/" target="_blank">Back to full website</a>
+        <div class="brand-left">
+          <img src="favicon.ico" class="brand-logo-img" alt="WordScout11Plus logo">
+          <h3>WordScout11Plus</h3>
+        </div>
+        <a href="https://www.wordscout11plus.com/" target="_blank" rel="noopener">Visit our shop</a>
       </div>
     </header>
 
@@ -31,6 +100,7 @@
       <a href="explanation.html">Learn</a>
       <a href="glossary.html">Glossary</a>
       <a href="resources.html" class="active">Resources</a>
+      <a href="contact.html">Contact</a>
     </nav>
 
     <!-- Page hero -->
@@ -151,11 +221,131 @@
         </div>
       </section>
 
-      <!-- VIDEOS SECTION -->
+      <!-- WORDSCOUT CHANNEL VIDEOS -->
       <section class="res-section">
         <div class="res-section-header">
           <div class="res-section-icon">V</div>
-          <h2>Videos worth watching</h2>
+          <h2>WordScout11Plus on YouTube</h2>
+        </div>
+        <p style="font-size:0.95rem;color:#4b5563;line-height:1.75;margin:0 0 32px;max-width:580px;">
+          Free videos from the WordScout11Plus channel covering vocabulary, spelling, figures of speech, and session updates.
+          Subscribe at <a href="https://www.youtube.com/@wordscout11plus" target="_blank" rel="noopener" style="color:#0a8f94;font-weight:700;">@wordscout11plus</a>.
+        </p>
+
+        <div class="ws-video-grid">
+
+          <a class="ws-video-card" href="https://www.youtube.com/watch?v=hMlVgwRlI8g" target="_blank" rel="noopener" data-audience="students parents">
+            <div class="ws-thumb-wrap">
+              <img src="https://img.youtube.com/vi/hMlVgwRlI8g/hqdefault.jpg" alt="Session 1 recap thumbnail" class="ws-thumb">
+              <div class="ws-play">&#9654;</div>
+              <span class="ws-duration">6:28</span>
+            </div>
+            <div class="ws-video-info">
+              <span class="ws-tag">Session recap</span>
+              <h3>Session 1 Recap: Vocab Definitions, Synonyms, Antonyms</h3>
+              <p>A walkthrough of vocabulary covered in the first 11+ session: word definitions, finding synonyms, and identifying antonyms with worked examples.</p>
+            </div>
+          </a>
+
+          <a class="ws-video-card" href="https://www.youtube.com/watch?v=mIin2FRRIbw" target="_blank" rel="noopener" data-audience="students parents">
+            <div class="ws-thumb-wrap">
+              <img src="https://img.youtube.com/vi/mIin2FRRIbw/hqdefault.jpg" alt="WordScout and SpellScout book intro thumbnail" class="ws-thumb">
+              <div class="ws-play">&#9654;</div>
+              <span class="ws-duration">1:59</span>
+            </div>
+            <div class="ws-video-info">
+              <span class="ws-tag">Books</span>
+              <h3>Introducing WordScout and SpellScout</h3>
+              <p>A short introduction to the two books: what they contain, how to use them together, and who they are designed for.</p>
+            </div>
+          </a>
+
+          <a class="ws-video-card" href="https://www.youtube.com/watch?v=LOP5RVD8EYQ" target="_blank" rel="noopener" data-audience="students">
+            <div class="ws-thumb-wrap">
+              <img src="https://img.youtube.com/vi/LOP5RVD8EYQ/hqdefault.jpg" alt="Personification explained thumbnail" class="ws-thumb">
+              <div class="ws-play">&#9654;</div>
+              <span class="ws-duration">1:11</span>
+            </div>
+            <div class="ws-video-info">
+              <span class="ws-tag">Figures of speech</span>
+              <h3>Personification Explained</h3>
+              <p>A quick, clear explanation of personification with examples showing how to identify it and use it correctly in 11+ answers.</p>
+            </div>
+          </a>
+
+          <a class="ws-video-card" href="https://www.youtube.com/watch?v=j8KnAxQP7aA" target="_blank" rel="noopener" data-audience="students">
+            <div class="ws-thumb-wrap">
+              <img src="https://img.youtube.com/vi/j8KnAxQP7aA/hqdefault.jpg" alt="What is a metaphor thumbnail" class="ws-thumb">
+              <div class="ws-play">&#9654;</div>
+              <span class="ws-duration">1:15</span>
+            </div>
+            <div class="ws-video-info">
+              <span class="ws-tag">Figures of speech</span>
+              <h3>What is a Metaphor?</h3>
+              <p>The difference between a metaphor and a simile, explained plainly. Includes worked examples suitable for 11+ English comprehension.</p>
+            </div>
+          </a>
+
+          <a class="ws-video-card" href="https://www.youtube.com/watch?v=LsUy6pLYRa0" target="_blank" rel="noopener" data-audience="students">
+            <div class="ws-thumb-wrap">
+              <img src="https://img.youtube.com/vi/LsUy6pLYRa0/hqdefault.jpg" alt="Similes made simple thumbnail" class="ws-thumb">
+              <div class="ws-play">&#9654;</div>
+              <span class="ws-duration">1:19</span>
+            </div>
+            <div class="ws-video-info">
+              <span class="ws-tag">Figures of speech</span>
+              <h3>Similes Made Simple</h3>
+              <p>A short lesson on similes: how to spot them, how to write them, and how they differ from metaphors. Straightforward and exam-focused.</p>
+            </div>
+          </a>
+
+          <a class="ws-video-card" href="https://www.youtube.com/watch?v=8CyJ6Mgbl0Q" target="_blank" rel="noopener" data-audience="students parents">
+            <div class="ws-thumb-wrap">
+              <img src="https://img.youtube.com/vi/8CyJ6Mgbl0Q/hqdefault.jpg" alt="Spelling reconnaissance thumbnail" class="ws-thumb">
+              <div class="ws-play">&#9654;</div>
+              <span class="ws-duration">1:04:04</span>
+            </div>
+            <div class="ws-video-info">
+              <span class="ws-tag">Full lesson</span>
+              <h3>Lesson 26: Spelling Reconnaissance</h3>
+              <p>A full lesson focused on the word "reconnaissance" and the spelling patterns behind it. One of the most commonly misspelled 11+ words.</p>
+            </div>
+          </a>
+
+          <a class="ws-video-card" href="https://www.youtube.com/watch?v=rasGuA-aawA" target="_blank" rel="noopener" data-audience="students parents">
+            <div class="ws-thumb-wrap">
+              <img src="https://img.youtube.com/vi/rasGuA-aawA/hqdefault.jpg" alt="11+ sessions announcement thumbnail" class="ws-thumb">
+              <div class="ws-play">&#9654;</div>
+              <span class="ws-duration">2:11</span>
+            </div>
+            <div class="ws-video-info">
+              <span class="ws-tag">Sessions</span>
+              <h3>11+ Sessions Announcement</h3>
+              <p>Information about upcoming 11+ preparation sessions: what is covered, how to join, and what to expect. Suitable for parents and students.</p>
+            </div>
+          </a>
+
+          <a class="ws-video-card" href="https://www.youtube.com/watch?v=eQ6TO-sqr9Y" target="_blank" rel="noopener" data-audience="students parents">
+            <div class="ws-thumb-wrap">
+              <img src="https://img.youtube.com/vi/eQ6TO-sqr9Y/hqdefault.jpg" alt="Channel intro thumbnail" class="ws-thumb">
+              <div class="ws-play">&#9654;</div>
+              <span class="ws-duration">1:36</span>
+            </div>
+            <div class="ws-video-info">
+              <span class="ws-tag">About</span>
+              <h3>Welcome to the WordScout11Plus Channel</h3>
+              <p>A brief introduction to the YouTube channel and what you can expect to find here: vocabulary lessons, figures of speech, sessions, and more.</p>
+            </div>
+          </a>
+
+        </div>
+      </section>
+
+      <!-- OTHER VIDEOS SECTION -->
+      <section class="res-section">
+        <div class="res-section-header">
+          <div class="res-section-icon">+</div>
+          <h2>Further viewing</h2>
         </div>
 
         <div class="res-grid">
@@ -168,7 +358,6 @@
                 <span class="res-aud res-aud--parents">Parents</span>
               </div>
             </div>
-            <!-- Simple styled video placeholder -->
             <div class="res-video-thumb" aria-hidden="true">
               <div class="res-play-btn">&#9654;</div>
               <div class="res-video-label">~10 min</div>
@@ -177,7 +366,7 @@
             <p>
               One of the most watched study skills videos around.
               <strong>Practical and easy to follow</strong>, with advice on how to get
-              more out of shorter study sessions. <em>Good for students and parents alike.</em>
+              more out of shorter study sessions.
             </p>
             <div class="res-visit">Watch on YouTube ↗</div>
           </a>
@@ -197,7 +386,7 @@
             </div>
             <h3>TED: The Power of Believing You Can Improve</h3>
             <p>
-              Carol Dweck's well-known talk on <em>growth mindset</em>. The main idea is that
+              Carol Dweck's well-known talk on growth mindset. The main idea is that
               <strong>believing you can improve actually helps you improve</strong>.
               Worth watching with your child.
             </p>
@@ -220,27 +409,6 @@
               A short, clear video explaining spaced repetition and why cramming does not work.
               <strong>Shows how to set up a simple revision timetable</strong>
               without needing any apps.
-            </p>
-            <div class="res-visit">Watch on YouTube ↗</div>
-          </a>
-
-          <a class="res-card res-card--video" href="https://www.youtube.com/watch?v=o0x5aHCGFKQ" target="_blank" data-audience="teachers parents">
-            <div class="res-card-top">
-              <span class="res-type-badge res-badge--video">YouTube</span>
-              <div class="res-audience-tags">
-                <span class="res-aud res-aud--teachers">Teachers</span>
-                <span class="res-aud res-aud--parents">Parents</span>
-              </div>
-            </div>
-            <div class="res-video-thumb" aria-hidden="true">
-              <div class="res-play-btn">&#9654;</div>
-              <div class="res-video-label">~12 min</div>
-            </div>
-            <h3>Retrieval Practice: The Research and the Classroom</h3>
-            <p>
-              A talk for teachers on <strong>how to use retrieval practice in lessons
-              and for homework</strong>. <em>Parents will also find it useful</em>
-              for understanding how to support studying at home.
             </p>
             <div class="res-visit">Watch on YouTube ↗</div>
           </a>
