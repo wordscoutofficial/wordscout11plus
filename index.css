@@ -211,6 +211,68 @@ section[id], div[id] { scroll-margin-top: 58px; }
   letter-spacing: 0.05em; text-transform: uppercase;
 }
 
+/* ---- YOUTUBE PROMO ---- */
+.yt-promo-layout {
+  display: grid;
+  grid-template-columns: 1fr 1.4fr;
+  gap: clamp(40px, 6vw, 80px);
+  align-items: center;
+}
+.yt-lead {
+  font-size: 1rem; color: var(--body);
+  line-height: 1.85; margin: 0 0 28px; max-width: 420px;
+}
+.btn-yt-subscribe {
+  display: inline-flex; align-items: center; gap: 10px;
+  background: #FF0000; color: white;
+  font-weight: 800; font-size: 0.95rem;
+  padding: 13px 24px; border-radius: 40px;
+  text-decoration: none;
+  box-shadow: 0 4px 18px rgba(255,0,0,0.28);
+  transition: background .18s, transform .18s;
+}
+.btn-yt-subscribe:hover { background: #cc0000; transform: translateY(-2px); color: white; }
+.yt-handle {
+  margin: 12px 0 0; font-size: 0.83rem;
+  color: var(--muted); font-weight: 700; letter-spacing: 0.03em;
+}
+.yt-featured-videos {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 14px;
+}
+.yt-vid { text-decoration: none; color: inherit; }
+.yt-vid-thumb-wrap {
+  position: relative; width: 100%;
+  aspect-ratio: 16/9; border-radius: 10px;
+  overflow: hidden; background: #062c33;
+  margin-bottom: 8px;
+}
+.yt-vid-thumb {
+  width: 100%; height: 100%; object-fit: cover; display: block;
+  transition: opacity .2s;
+}
+.yt-vid:hover .yt-vid-thumb { opacity: 0.82; }
+.yt-vid-play {
+  position: absolute; top: 50%; left: 50%;
+  transform: translate(-50%, -50%);
+  width: 36px; height: 36px; border-radius: 50%;
+  background: rgba(255,255,255,0.9);
+  display: flex; align-items: center; justify-content: center;
+  font-size: 0.9rem; color: #111;
+  pointer-events: none;
+}
+.yt-vid-dur {
+  position: absolute; bottom: 5px; right: 6px;
+  background: rgba(0,0,0,0.75); color: #fff;
+  font-size: 0.68rem; font-weight: 700;
+  padding: 2px 5px; border-radius: 3px;
+}
+.yt-vid-title {
+  margin: 0; font-size: 0.82rem; font-weight: 800;
+  color: var(--ink); line-height: 1.4;
+}
+
 /* ---- SESSIONS STRIP ---- */
 .sessions-strip { background: var(--teal-dark); padding: clamp(36px, 5vw, 56px) 0; }
 .sessions-inner {
@@ -246,6 +308,8 @@ footer strong { color: #61c8fc; }
 
 /* ---- RESPONSIVE ---- */
 @media (max-width: 760px) {
+  .yt-promo-layout { grid-template-columns: 1fr; }
+  .yt-featured-videos { grid-template-columns: repeat(3, 1fr); }
   .about-layout { grid-template-columns: 1fr; }
   .about-pull   { position: static; }
   .reviews-editorial { grid-template-columns: 1fr; }
